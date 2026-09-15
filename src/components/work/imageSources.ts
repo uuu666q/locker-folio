@@ -1,25 +1,25 @@
 /**
  * 作品图的响应式源。
  *
- * 原图宽 1000–1400px，而各栏目真实显示宽度只有 200–530 CSS px。
+ * 原图宽 900–1000px，而各栏目真实显示宽度只有 200–530 CSS px。
  * `scripts/gen-image-variants.sh` 按 1x / 2x 生成了两档变体，这里统一拼 srcset，
  * 让浏览器按显示尺寸和 DPR 取最小的一张 —— 直接决定 RGBA 解码占用的内存。
  */
 
 /** 各栏目原图的像素宽 */
 const FULL_W = {
-  photo: 1400,
+  photo: 900,
   posters: 1000,
   mag: 1049,
-  cover: 1400,
+  cover: 960,
 } as const
 
 /** 与生成脚本保持一致的变体宽度 */
 const VARIANTS: Record<keyof typeof FULL_W, number[]> = {
-  photo: [300, 600, 900],
+  photo: [300, 600],
   posters: [400, 700],
   mag: [420, 760],
-  cover: [480, 640, 960],
+  cover: [480, 640],
 }
 
 export type WorkAssetDir = keyof typeof FULL_W

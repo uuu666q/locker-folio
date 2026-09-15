@@ -40,3 +40,6 @@ scripts/check-all.mjs
 scripts/compare-golden.mjs
 src/scene/qaCapture.ts
 *.test.ts
+
+# 临时脚本与中间产物（scripts/ 下隐藏文件）
+scripts/.*

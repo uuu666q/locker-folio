@@ -830,7 +830,7 @@ export function GuitarModel() {
  * contact shadow on the locker door instead of intersecting the vent slats.
  */
 export function PosterCardModel({
-  url = '/assets/obj/posterwall.webp',
+  url = '/assets/obj/posterwall.jpg',
 }: {
   url?: string
 }) {
@@ -947,7 +947,7 @@ export function PolaroidCardModel({
   crop: PixelCrop
   size: readonly [width: number, height: number]
 }) {
-  const texture = useCroppedTexture('/assets/obj2/polaroids.webp', POLAROID_SOURCE_SIZE, crop)
+  const texture = useCroppedTexture('/assets/obj2/polaroids.jpg', POLAROID_SOURCE_SIZE, crop)
   const [cardWidth, cardHeight] = size
   const sourceAspect = crop.width / crop.height
   const maxPhotoWidth = cardWidth - 0.046

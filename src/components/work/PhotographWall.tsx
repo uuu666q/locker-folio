@@ -7,7 +7,7 @@ import { releaseImages, SIZES, workImage } from './imageSources'
 import './photo.css'
 
 const COLS = 4
-const ROWS = 4
+const ROWS = Math.ceil(PHOTOS.length / COLS)
 /**
  * 槽位外框（也是所有 SHAPES 的上限）。
  * 448 × cos12° ≈ 438 落到屏幕上，占 1440 画幅的 30.4%，正好在参考图的 25–33% 区间里；
@@ -73,7 +73,7 @@ type Cell = { key: string; x: number; y: number; w: number; h: number; src: stri
 type Win = { gx0: number; gx1: number; gy0: number; gy1: number; k: number }
 
 /**
- * 算出可见窗口内的格子；世界坐标按无限网格推导，内容按 4×4 取模复用。
+ * 算出可见窗口内的格子；世界坐标按无限网格推导，内容按 4×ROWS 取模复用。
  * 步距、错落、尺寸都在这里乘一次 w.k —— 全局只此一处缩放，别在渲染时再乘一遍，那会把 k 平方。
  */
 function buildCells(w: Win): Cell[] {

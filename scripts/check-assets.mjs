@@ -7,8 +7,9 @@
  */
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs'
 import { join, extname, relative } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '')
+const ROOT = fileURLToPath(new URL('..', import.meta.url)).replace(/[\\/]$/, '')
 const target = process.argv[2] === 'dist' ? 'dist' : null
 const PUBLIC_DIR = target ? join(ROOT, 'dist') : join(ROOT, 'public')
 const HTML = target ? join(ROOT, 'dist/index.html') : join(ROOT, 'index.html')
@@ -16,7 +17,7 @@ const HTML = target ? join(ROOT, 'dist/index.html') : join(ROOT, 'index.html')
 /** 首屏预算（§12.1）；作品页素材不算首屏 */
 const BUDGET = {
   heroTransferKiB: 1600, // 首屏阻塞素材的传输体积
-  totalTransferMiB: 8, // 全部静态素材
+  totalTransferMiB: 72, // 全部静态素材；已接入作者真实作品集（3 部本地视频约 43MiB + 42 张照片/10 张海报多档变体），预算随内容扩容，仍用于拦截异常膨胀
   heroDecodedMiB: 48, // 首屏 GPU 纹理 / RGBA 解码估算
   entryGzipKiB: 120, // 入口 JS 的 gzip 上限：Three/R3F 必须在 lazy 边界之外
 }
@@ -62,7 +63,7 @@ const srcFiles = walk(join(ROOT, 'src')).filter((f) =>
 const referenced = new Set()
 for (const f of srcFiles) {
   const text = readFileSync(f, 'utf8')
-  for (const m of text.matchAll(/\/assets\/[A-Za-z0-9_\-/]+\.(?:webp|png|jpg|jpeg|avif|glb|gltf|ktx2|hdr)/g)) {
+  for (const m of text.matchAll(/\/assets\/[A-Za-z0-9_\-/]+\.(?:webp|png|jpg|jpeg|avif|glb|gltf|ktx2|hdr|mp4)/g)) {
     referenced.add(m[0])
   }
 }
@@ -82,9 +83,9 @@ notes.push(`静态引用素材：${referenced.size}；动态目录：${[...dynam
 // ── 3. 未被引用的素材（只警告，可能是动态引用） ───────────────────
 const assetFiles = walk(join(ROOT, 'public/assets'))
 for (const f of assetFiles) {
-  const web = '/' + relative(join(ROOT, 'public'), f)
+  const web = '/' + relative(join(ROOT, 'public'), f).replaceAll('\\', '/')
   if (referenced.has(web)) continue
-  const dir = relative(join(ROOT, 'public/assets'), f).split('/').slice(0, -1).join('/')
+  const dir = relative(join(ROOT, 'public/assets'), f).replaceAll('\\', '/').split('/').slice(0, -1).join('/')
   if (dynamicDirs.has(dir)) continue
   warnings.push(`素材未被任何源码引用：${web}`)
 }

@@ -8,14 +8,14 @@ import './folders.css'
 const DesignView = lazy(() => import('../work/DesignView'))
 const PhotographWall = lazy(() => import('../work/PhotographWall'))
 const VideoList = lazy(() => import('../work/VideoList'))
-const WebsiteCarousel = lazy(() => import('../work/WebsiteCarousel'))
+const GameView = lazy(() => import('../work/GameView'))
 
 /* 视频里四个文件夹的版位（相对 1320×724 底稿换算成百分比） */
 const POS: Record<string, { l: number; t: number; w: number; h: number; rot: number }> = {
   video: { l: 16.7, t: 47.0, w: 19.3, h: 30.4, rot: -6 },
   design: { l: 33.0, t: 27.6, w: 29.2, h: 44.2, rot: -7 },
   photograph: { l: 55.3, t: 9.7, w: 23.1, h: 35.9, rot: 3 },
-  website: { l: 56.8, t: 63.5, w: 22.3, h: 31.8, rot: 2 },
+  game: { l: 55.3, t: 47.0, w: 23.1, h: 35.9, rot: 5 },
 }
 
 export default function WorkFolders() {
@@ -28,7 +28,7 @@ export default function WorkFolders() {
         {workView === 'design' && <DesignView />}
         {workView === 'photograph' && <PhotographWall />}
         {workView === 'video' && <VideoList />}
-        {workView === 'website' && <WebsiteCarousel />}
+        {workView === 'game' && <GameView />}
       </Suspense>
     )
   }

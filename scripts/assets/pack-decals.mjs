@@ -42,11 +42,12 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 
 sharp.cache(false)
 
-const ROOT = new URL('../..', import.meta.url).pathname.replace(/\/$/, '')
+const ROOT = fileURLToPath(new URL('../..', import.meta.url)).replace(/[\\/]$/, '')
 const DRY = process.argv.includes('--dry')
 /** --check：只校验磁盘上的图集与 UV 表是不是当前源图与配置的产物，不写文件 */
 const CHECK = process.argv.includes('--check')
@@ -79,29 +80,17 @@ const JSON_OUT = 'scripts/assets/decal-atlas.json'
  */
 const MEMBERS = [
   // ── 门 2 内侧：自动推近的终点，分辨率要求最高 ──
-  { url: '/assets/obj/idcard2.webp', maxW: 481, why: '近景 275px × 1.75' },
-  { url: '/assets/obj/tapes.webp', maxW: 304, why: '门宽 0.26' },
-  { url: '/assets/obj2/stk1.webp', maxW: 198, why: '门宽 0.17' },
-  { url: '/assets/obj2/stk2.webp', maxW: 291, why: '门宽 0.25' },
-  { url: '/assets/obj2/stk3.webp', maxW: 198, why: '门宽 0.17' },
-  { url: '/assets/obj2/stk4.webp', maxW: 163, why: '门宽 0.14' },
-  { url: '/assets/obj2/stk5.webp', maxW: 210, why: '门宽 0.18' },
-  { url: '/assets/obj2/stk6.webp', maxW: 244, why: '门宽 0.21' },
-  { url: '/assets/obj2/stk7.webp', maxW: 279, why: '门宽 0.24' },
-  { url: '/assets/obj2/stk8.webp', maxW: 268, why: '门宽 0.23' },
-  { url: '/assets/obj2/stk9.webp', maxW: 151, why: '门宽 0.13' },
-  // 提交 11f 新增的两张文字贴纸，等场景层在 decalSpecs 里排位后才会出现在门上
-  { url: '/assets/obj2/stk10.webp', maxW: 233, why: '门宽 0.20（待场景层排位）' },
-  { url: '/assets/obj2/stk11.webp', maxW: 198, why: '门宽 0.17（待场景层排位）' },
-  // ── 门 1 / 门 4 外表面：全程关着，只在落位帧的尺度上出现 ──
-  { url: '/assets/obj/posterwall.webp', maxW: 322, why: '门宽 0.56 × 1.6 余量' },
-  { url: '/assets/obj/trayA.webp', maxW: 230, why: '门宽 0.40 × 1.6 余量' },
-  { url: '/assets/obj/trayB.webp', maxW: 230, why: '门宽 0.40 × 1.6 余量' },
-  { url: '/assets/obj2/polaroids.webp', maxW: 379, why: '门宽 0.66 × 1.6 余量' },
+  // 六张用户贴纸；maxW = 1164 设备像素/门宽 × decalSpecs 里的门宽比例
+  { url: '/assets/stickers/bunny.webp', maxW: 175, why: '门宽 0.15' },
+  { url: '/assets/stickers/puppy.webp', maxW: 256, why: '门宽 0.22' },
+  { url: '/assets/stickers/clover.webp', maxW: 163, why: '门宽 0.14' },
+  { url: '/assets/stickers/girl.webp', maxW: 151, why: '门宽 0.13' },
+  { url: '/assets/stickers/shark.webp', maxW: 186, why: '门宽 0.16' },
+  { url: '/assets/stickers/seal.webp', maxW: 163, why: '门宽 0.14' },
 ]
 
 /** texture-report.mjs 判定必须走混合的块；其余全部 cutout */
-const BLEND_URLS = new Set(['/assets/obj/tapes.webp'])
+const BLEND_URLS = new Set()
 
 /**
  * 与场景层对账：**哪些贴花存在**由 src/scene/decalSpecs.ts 说了算，

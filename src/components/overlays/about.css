@@ -127,7 +127,12 @@
 .idc__avatar {
   width: 100%;
   max-width: 158px;
-  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 3px 12px rgba(30, 35, 45, 0.22);
+  background: #ffffff;
 }
 
 .idc__main {
@@ -188,18 +193,30 @@
   gap: clamp(5px, 0.95vw, 13px) clamp(14px, 2.4vw, 34px);
 }
 
+.idc__field {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px dashed rgba(30, 34, 40, 0.18);
+  padding-bottom: 0.3em;
+}
+
 .idc__field dt {
   font-size: clamp(4.8px, 0.9cqw, 8.4px);
   letter-spacing: 0.06em;
   color: #3c4149;
   font-family: var(--font-cn);
+  white-space: nowrap;
 }
 
 .idc__field dd {
-  margin: 0.24em 0 0;
+  margin: 0;
   font-size: clamp(8px, 1.72cqw, 16.5px);
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-align: right;
+  white-space: nowrap;
 }
 
 /* 钢印 */
@@ -279,6 +296,15 @@
 .idc__cv {
   font-size: clamp(7px, 1.36cqw, 13px);
   font-weight: 700;
+  text-decoration: underline dotted rgba(44, 66, 103, 0.55);
+  text-underline-offset: 2px;
+}
+
+.idc__contact .idc__cv::before {
+  content: '✉ ';
+}
+.idc__contact--mid .idc__cv::before {
+  content: '☎ ';
 }
 
 .idc__tag {

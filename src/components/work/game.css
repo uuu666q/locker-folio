@@ -1,0 +1,155 @@
+.gv {
+  overflow: hidden;
+  /* 与 design 页一致的纸白舞台 */
+  animation: gvIn 0.5s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  padding: 0 40px;
+}
+
+@keyframes gvIn {
+  from {
+    transform: scale(1.02);
+  }
+}
+
+.gv__head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.gv__en {
+  font-family: var(--font-poster);
+  font-size: 54px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.gv__cn {
+  font-family: var(--font-cn);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  color: #c62c26;
+}
+
+.gv__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 46px;
+}
+
+.gv__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 264px;
+  text-decoration: none;
+  color: var(--ink);
+  transform: rotate(-2deg);
+  transition:
+    transform 0.34s var(--ease-out),
+    filter 0.34s var(--ease-out);
+}
+
+.gv__card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.gv__cover {
+  width: 264px;
+  height: 348px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 14px 34px rgba(30, 35, 45, 0.24),
+    0 2px 0 rgba(255, 255, 255, 0.6) inset;
+  background: #ffffff;
+  transition:
+    transform 0.34s var(--ease-out),
+    box-shadow 0.34s var(--ease-out);
+}
+
+.gv__card:hover {
+  transform: rotate(0deg) scale(1.045);
+  z-index: 2;
+}
+
+.gv__card:hover .gv__cover {
+  box-shadow:
+    0 22px 46px rgba(30, 35, 45, 0.36),
+    0 2px 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+.gv__name {
+  font-family: var(--font-cn);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 7px 22px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(30, 35, 45, 0.14);
+  border: 1px solid rgba(30, 35, 45, 0.1);
+}
+
+.gv__hint {
+  margin: 0;
+  max-width: 560px;
+  text-align: center;
+  font-family: var(--font-cn);
+  font-size: 12px;
+  line-height: 1.9;
+  color: rgba(30, 35, 45, 0.62);
+}
+
+.gv__hint-label {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #c62c26;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1.7;
+  vertical-align: 1px;
+}
+
+.gv__hint code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(30, 35, 45, 0.8);
+  background: rgba(30, 35, 45, 0.06);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+@media (max-width: 720px) {
+  .gv {
+    gap: 22px;
+    padding: 0 20px;
+  }
+  .gv__en {
+    font-size: 38px;
+  }
+  .gv__grid {
+    gap: 28px;
+  }
+  .gv__card,
+  .gv__cover {
+    width: 200px;
+  }
+  .gv__cover {
+    height: 264px;
+  }
+}

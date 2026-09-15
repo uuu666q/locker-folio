@@ -9,5 +9,4 @@
     // 把「素材 404」伪装成解码失败。
     "not_found_handling": "none"
   },
-  "routes": [{ "pattern": "locker.zezn.dev", "custom_domain": true }]
 }

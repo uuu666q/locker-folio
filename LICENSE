@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 qzz0518
+Copyright (c) 2026 CHEN YOU (谌柚)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,5 @@ This MIT license covers the SOURCE CODE in this repository only.
 
 本许可只覆盖本仓库的**源码**。不在此许可范围内的部分：
 
-1. 设计创意 —— 本站的视觉概念与交互设计复刻自小红书博主 momo 的 Locker
-   个人网站，著作权归原作者所有。见 README 的「版权与致谢」。
-2. public/assets/ 下的替代素材 —— 各自遵循其原始授权。
-3. 通过 Google Fonts 引入的字体 —— 遵循各字体自身的 SIL Open Font License。
+1. public/assets/ 下的素材 —— 各自遵循其原始授权。
+2. 通过 Google Fonts 引入的字体 —— 遵循各字体自身的 SIL Open Font License。

@@ -1,21 +1,9 @@
 /* 站点全部文案与作品数据 —— 与参考逐帧核对整理 */
 
 export const SITE = {
-  owner: 'AVA LI',
-  tagline: "AVA LI — PORTFOLIO '26",
+  owner: 'CHEN YOU',
+  tagline: "CHEN YOU — PORTFOLIO '26",
   year: '2026',
-}
-
-/* ── 出处与源码 ───────────────────────────────────────
- * 本站是对小红书博主 momo 的 Locker 个人网站的复刻练习：视觉创意归原作者，
- * 这条出处要一直挂在页面上（左下角 Credit 组件），不是只写在 README 里。
- * repoUrl 是开源仓库地址，换仓库时只改这一处。 */
-export const CREDIT = {
-  author: 'momo',
-  platform: '小红书',
-  originUrl:
-    'https://www.xiaohongshu.com/discovery/item/6a852ae7000000002500b24e?xsec_token=ABxWdb99F51QhPGOvNNuLGxYSbTeGIKFnMDujjIeP1Kr8=',
-  repoUrl: 'https://github.com/qzz0518/locker-folio',
 }
 
 /* ── 顶部导航 ─────────────────────────────────────────── */
@@ -33,15 +21,15 @@ export const ABOUT = {
   titleCn: '个人简介',
   sub: 'PERSONAL PORTFOLIO ID CARD',
   fields: [
-    { k: 'NAME / 姓名', v: 'XXX' },
-    { k: 'GENDER / 性别', v: 'XXX' },
-    { k: 'AGE / 年龄', v: 'XXX' },
+    { k: 'NAME / 姓名', v: '谌柚' },
+    { k: 'GENDER / 性别', v: '女' },
+    { k: 'AGE / 年龄', v: '19' },
     { k: 'CLASS / 班级', v: 'XXX' },
-    { k: 'EDUCATION / 学历', v: 'XXX' },
-    { k: 'MAJOR / 专业', v: 'XXX' },
+    { k: 'EDUCATION / 学历', v: '本科' },
+    { k: 'MAJOR / 专业', v: '数字媒体艺术' },
   ],
-  email: 'xxx',
-  phone: 'xxx',
+  email: '78420253@qq.com',
+  phone: '15116760337',
   stampTop: 'CERTIFIED',
   stampMid: 'xxx',
   stampRing: 'PERSONAL PORTFOLIO · xxx ·',
@@ -63,38 +51,43 @@ export type SkillCard = {
 export const SKILLS: SkillCard[] = [
   {
     no: '01',
-    kicker: '01 / VISUAL DESIGN',
-    title: '视觉设计',
-    desc: '以排版、色彩与图像建立可被记住的视觉秩序。',
+    kicker: '01 / AIGC VISUAL GENERATION',
+    title: 'AIGC 视觉生成',
+    desc: '熟练使用即梦 Dreamina 完成 AI 生图与图生视频，掌握提示词工程，具备多轮抽卡筛选与画面迭代优化能力。',
     rows: [
-      { k: 'GRAPHIC', v: 'Photoshop / Illustrator' },
-      { k: 'LAYOUT', v: 'InDesign / Figma' },
-      { k: 'MOTION', v: 'After Effects / C4D' },
+      { k: 'IMAGE', v: '即梦 Dreamina · AI 生图 / 图生视频' },
+      { k: 'PROMPT', v: '提示词工程 / 多轮抽卡 / 画面迭代' },
+      { k: 'CASE', v: '《武松打虎》提示词校准历史国风画面特征' },
+      { k: 'PROJECT', v: 'AIGC 游戏视觉开发 · 48h 极限实战（视觉美术负责人）' },
+      { k: 'NOTE', v: '水怪实验室 / CIGA Game Jam《森屿》《四渡赤水》：批量生图迭代提示词，按期交付成套视觉素材' },
     ],
     bg: '#1b28d8',
     fg: '#ffffff',
   },
   {
     no: '02',
-    kicker: '02 / DATA & INSIGHT',
-    title: '数据分析',
-    desc: '整理、分析并解释数据，为叙事与决策建立清晰依据。',
+    kicker: '02 / EDIT & POST-PRODUCTION',
+    title: '后期剪辑与包装',
+    desc: '熟练使用剪映完成视频剪辑、转场特效与音效合成，高效处理碎片化的 AI 素材。',
     rows: [
-      { k: 'ANALYSIS', v: 'SPSS / SQL / Python' },
-      { k: 'WORKFLOW', v: 'Excel / VLOOKUP / 数据透视表' },
+      { k: 'EDIT', v: '剪映 · 剪辑 / 转场特效 / 音效合成' },
+      { k: 'CASE', v: '《毕业故事会》转场配乐弥补 AI 画面断层' },
+      { k: 'PROJECT', v: '人文纪实影像 · AI 辅助叙事（项目组长）' },
+      { k: 'NOTE', v: '《毕业故事会》《井底十载 山村新颜》：AI 提炼口述故事线，人工剪辑调色配乐，获官方平台发布认可' },
     ],
     bg: '#c8f322',
     fg: '#12140f',
   },
   {
     no: '03',
-    kicker: '03 / GENERATIVE PRACTICE',
-    title: 'AI 工具',
-    desc: '把生成式工具融入研究、视觉试验与创意内容生产。',
+    kicker: '03 / TOOLS & PLANNING',
+    title: '辅助工具与策划',
+    desc: '熟练使用 ChatGPT-4o、Kimi 完成剧本发散、分镜脚本编写与素材分析，具备团队沟通与 AIGC 工作流落地能力。',
     rows: [
-      { k: 'IMAGE', v: 'Recraft / 即梦 AI / Nano Banana' },
-      { k: '3D', v: '焦点 AI / 混元 AI / Tripo' },
-      { k: 'RESEARCH', v: 'Gemini / GPT' },
+      { k: 'AI', v: 'ChatGPT-4o / Kimi · 剧本·分镜·素材分析' },
+      { k: 'TOOLS', v: '可灵 AI / 即梦 / 剪映 / ElevenLabs' },
+      { k: 'PROJECT', v: '南京人文「白日梦」AI 概念短片（备赛探索）' },
+      { k: 'NOTE', v: '城墙·秦淮河 × 梦境：ChatGPT 分镜 → 即梦生图 → 可灵动态 → 剪映成片，已跑通轻量化工作流' },
     ],
     bg: '#ffffff',
     fg: '#14161a',
@@ -140,32 +133,47 @@ export const FOLDERS = [
     z: 2,
   },
   {
-    id: 'website',
-    en: ['WEBSITE', '&', 'WRITING'],
-    cn: '文字作品',
-    bg: '#f8f8f6',
-    fg: '#14161a',
-    cnFg: '#14161a',
-    x: 22,
+    id: 'game',
+    en: ['GAME'],
+    cn: '游戏作品',
+    bg: '#ffffff',
+    fg: '#1b1d21',
+    cnFg: '#1b1d21',
+    x: 30,
     y: 20,
-    rot: 2,
+    rot: 5,
     z: 2,
+  },
+] as const
+
+/* ── GAME：两个游戏项目 ─────────────────────────────── */
+export const GAMES = [
+  {
+    id: 'anchor',
+    name: '记忆之锚',
+    cover: '/assets/game/anchor.jpg',
+    url: 'file:///D:/aaa/uuu/个人档案/游戏/记忆之锚',
+  },
+  {
+    id: 'flappy',
+    name: '弗莱皮鸟',
+    cover: '/assets/game/flappy.jpg',
+    url: 'file:///D:/aaa/uuu/个人档案/游戏/弗莱皮鸟',
   },
 ] as const
 
 /* ── DESIGN › 01 POSTERS ─────────────────────────────── */
 export const POSTERS = [
-  { src: 'greenapple', title: 'GREEN APPLE' },
-  { src: 'happynewyear', title: 'HAPPY NEW YEAR' },
-  { src: 'streamnow', title: 'STREAM NOW' },
-  { src: 'butterfly', title: '无人之境 · UNMANNED REALM' },
-  { src: 'frangipani', title: 'WHERE FRANGIPANI FALLS' },
-  { src: 'chocaward', title: '年度创新糖巧奖' },
-  { src: 'childhood', title: 'HELLO CHILDHOOD MEMORIES' },
-  { src: 'yexing', title: '夜行之梦 · DREAM IN FLIGHT' },
-  { src: 'chocmint', title: '薄荷味夹心黑巧克力' },
-  { src: 'grassfest', title: '草地音乐节 · GRASS FEST' },
-  { src: 'research', title: 'US-CHINA RESEARCH TRENDS' },
+  { src: 'xmas_market', title: "ST AUGUSTINE'S CHRISTMAS MARKET" },
+  { src: 'skunk', title: 'SKUNK · 林间诗' },
+  { src: 'tiny_joy', title: 'TINY JOY · THE WARMTH OF LITTLE CREATURES' },
+  { src: 'flower_guide', title: 'CHAMOMILE FLOWER GUIDE' },
+  { src: 'jujube', title: '闻枣香 品心甜' },
+  { src: 'tomato_egg', title: 'TOMATO & EGG ON CAPO' },
+  { src: 'big_blue', title: 'THE BIG BLUE · 深海来客' },
+  { src: 'mid_autumn', title: '月满中秋 · 节日快乐' },
+  { src: 'forest', title: 'FOREST · NO.02 WOODLAND ISSUE' },
+  { src: 'peach_jasmine', title: '月圆就见面 · 白桃茉莉' },
 ]
 
 /* ── DESIGN › 02 MAGAZINE ────────────────────────────── */
@@ -192,31 +200,86 @@ export const IP_DESIGN = {
 
 /* ── PHOTOGRAPH ──────────────────────────────────────── */
 export const PHOTOS = [
-  'p1', 'p4', 'p2', 'p6',
-  'p5', 'p3', 'p6', 'p1',
-  'p2', 'p5', 'p4', 'p3',
-  'p6', 'p1', 'p3', 'p5',
+  'p01',
+  'p02',
+  'p03',
+  'p04',
+  'p05',
+  'p06',
+  'p07',
+  'p08',
+  'p09',
+  'p10',
+  'p11',
+  'p12',
+  'p13',
+  'p14',
+  'p15',
+  'p16',
+  'p17',
+  'p18',
+  'p19',
+  'p20',
+  'p21',
+  'p22',
+  'p23',
+  'p24',
+  'p25',
+  'p26',
+  'p27',
+  'p28',
+  'p29',
+  'p30',
+  'p31',
+  'p32',
+  'p33',
+  'p34',
+  'p35',
+  'p36',
+  'p37',
+  'p38',
+  'p39',
+  'p40',
+  'p41',
+  'p42',
 ]
 
 /* ── VIDEO ───────────────────────────────────────────── */
 export const VIDEOS = [
   {
     no: '01',
-    en: 'CHARACTER PV',
-    cn: '动漫单人角色 PV',
-    desc: 'Minimax 辅助生成制作二次元风格单人角色宣传短片',
-    cover: 'pv1',
-    href: 'https://www.feicut.com/fv/FVf0hc366wam?cm=1&fc=2&p=0',
+    en: 'ANIMATION SHORT',
+    cn: '丛林动画短片',
+    desc: '手绘风丛林场景动画短片',
+    cover: 'jungle',
+    href: '/assets/video/jungle.mp4',
   },
   {
     no: '02',
-    en: 'ACTION CUT',
-    cn: '动作向动漫 PV',
-    desc: '多角色动作分镜与节奏剪辑试验',
-    cover: 'pv2',
-    href: 'https://www.feicut.com/fv/FVbhfppjrege?cm=1&fc=1&p=0',
+    en: 'DOCUMENTARY',
+    cn: '山村新颜 · 纪实短片',
+    desc: '乡村纪实短片《井底十载 山村新颜》',
+    cover: 'village',
+    href: '/assets/video/village.mp4',
+  },
+  {
+    no: '03',
+    en: 'GRADUATION VIDEO',
+    cn: '毕业纪念短片',
+    desc: '毕业季纪念短片',
+    cover: 'graduation',
+    href: '/assets/video/graduation.mp4',
+  },
+  {
+    no: '04',
+    en: 'GUOFENG ANIMATION',
+    cn: '国风动画短片',
+    desc: '红树青烟 · 国风氛围动画短片',
+    cover: 'guofeng',
+    href: '/assets/video/guofeng.mp4',
   },
 ]
+
 
 /* ── WEBSITE & WRITING ───────────────────────────────── */
 /* href 是占位：三个站点还没有可公开的正式地址，一律先指向 '#'，

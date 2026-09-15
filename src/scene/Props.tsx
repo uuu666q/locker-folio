@@ -87,7 +87,7 @@ const GUITAR = findSpec('Prop_Guitar')
 
 const POSTER: PropSpec = {
   name: 'Prop_Door01_Poster',
-  url: '/assets/obj/posterwall.webp',
+  url: '/assets/obj/posterwall.jpg',
   at: [0, 0, 0],
   width: 0.53,
   from: { dz: -0.045, scale: 0.94 },
@@ -135,7 +135,7 @@ const ID_CARD: PropSpec = {
 
 const DOOR4_PHOTO_FRIENDS: PropSpec = {
   name: 'Prop_Door04_PhotoFriends',
-  url: '/assets/obj2/polaroids.webp',
+  url: '/assets/obj2/polaroids.jpg',
   at: [0, 0, 0],
   width: 0.36,
   from: { dz: -0.05, scale: 0.9 },

@@ -15,8 +15,9 @@
 import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const ROOT = new URL('../..', import.meta.url).pathname.replace(/\/$/, '')
+const ROOT = fileURLToPath(new URL('../..', import.meta.url)).replace(/[\\/]$/, '')
 const FILE = join(ROOT, 'src/experience/assetManifest.ts')
 const CHECK = process.argv.includes('--check')
 

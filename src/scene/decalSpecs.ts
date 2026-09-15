@@ -46,33 +46,17 @@ export const DOOR4_DECALS: readonly DecalSpec[] = []
  * 的 IdCardModel，由 Props.tsx 按 ID_CARD_AT 装到门上。
  */
 export const DOOR2_INNER_DECALS: readonly DecalSpec[] = [
-  // 门顶那两张文字贴纸，在参考里左右框住工牌、占满上半屏。
-  // 位置按门面 x 657–800 / y 35–665 线性反解给出，同一套反解在工牌上
-  // 与参考逐像素吻合。倾角（−3°/+4°）已烘进贴图，不再给 rot。
-  { id: 'stk-jad', url: '/assets/obj2/stk10.webp', left: 0.06, top: 0.1, width: 0.34, draggable: true },
-  { id: 'stk-nowadays', url: '/assets/obj2/stk11.webp', left: 0.49, top: 0.09, width: 0.34, draggable: true },
-  { id: 'tapes', url: '/assets/obj/tapes.webp', left: 0.03, top: 0.46, width: 0.26, draggable: true },
-  { id: 'stk-love', url: '/assets/obj2/stk6.webp', left: 0.04, top: 0.14, width: 0.21, rot: -4, draggable: true },
-  { id: 'stk-wizard', url: '/assets/obj2/stk5.webp', left: 0.72, top: 0.18, width: 0.18, rot: 6, draggable: true },
-  { id: 'stk-girl', url: '/assets/obj2/stk1.webp', left: 0.04, top: 0.29, width: 0.17, rot: -2, draggable: true },
-  { id: 'stk-cat', url: '/assets/obj2/stk3.webp', left: 0.71, top: 0.3, width: 0.17, rot: 3, draggable: true },
-  { id: 'stk-photo', url: '/assets/obj2/stk4.webp', left: 0.13, top: 0.45, width: 0.14, rot: -5, draggable: true },
-  { id: 'stk-duo', url: '/assets/obj2/stk2.webp', left: 0.42, top: 0.435, width: 0.25, rot: 2, draggable: true },
-  { id: 'stk-red', url: '/assets/obj2/stk7.webp', left: 0.49, top: 0.57, width: 0.24, rot: -3, draggable: true },
-  { id: 'stk-omg', url: '/assets/obj2/stk8.webp', left: 0.26, top: 0.605, width: 0.23, rot: 4, draggable: true },
-  { id: 'stk-flower', url: '/assets/obj2/stk9.webp', left: 0.73, top: 0.54, width: 0.13, rot: -6, draggable: true },
-
-  // 原版的门内侧从中段一直铺到打字机上沿。现有资源没有那些手写纸条和
-  // 破碎爱心的独立纹理，因此复用同一图集里的小贴纸做第二组拼贴；尺寸、
-  // 倾角和疏密都刻意错开，避免看起来像规则重复的贴纸墙。0.85 以下留给
-  // 吸附在门板底部的实体打字机，拖动时也不会被这些默认位置挡住。
-  { id: 'stk-love-lower', url: '/assets/obj2/stk6.webp', left: 0.06, top: 0.69, width: 0.16, rot: 7, draggable: true },
-  { id: 'stk-photo-lower', url: '/assets/obj2/stk4.webp', left: 0.25, top: 0.72, width: 0.11, rot: 5, draggable: true },
-  { id: 'stk-duo-lower', url: '/assets/obj2/stk2.webp', left: 0.4, top: 0.735, width: 0.2, rot: -5, draggable: true },
-  { id: 'stk-wizard-lower', url: '/assets/obj2/stk5.webp', left: 0.69, top: 0.7, width: 0.15, rot: -8, draggable: true },
-  { id: 'stk-girl-lower', url: '/assets/obj2/stk1.webp', left: 0.04, top: 0.775, width: 0.13, rot: 4, draggable: true },
-  { id: 'stk-omg-lower', url: '/assets/obj2/stk8.webp', left: 0.59, top: 0.79, width: 0.18, rot: 6, draggable: true },
-  { id: 'stk-flower-lower', url: '/assets/obj2/stk9.webp', left: 0.82, top: 0.79, width: 0.1, rot: -8, draggable: true },
+  // 用户的六张贴纸（肌肉兔/趴趴小狗/四叶草/怪趣女孩/鲨鱼抱枕/海豹挂件）。
+  // 贴纸墙已从作品文件夹移除，这里就是它们的家 —— 翻开后正对观众的
+  // 门板上的可拖动小物件。位置避开工牌（视觉中心偏右、top 0.18–0.55）
+  // 与底部实体打字机（0.85 以下），尺寸、倾角、疏密刻意错开，
+  // 形成自然的「冰箱贴」分布。
+  { id: 'usr-bunny', url: '/assets/stickers/bunny.webp', left: 0.03, top: 0.02, width: 0.36, rot: -4, draggable: true },
+  { id: 'usr-puppy', url: '/assets/stickers/puppy.webp', left: 0.5, top: 0.02, width: 0.42, rot: 3, draggable: true },
+  { id: 'usr-clover', url: '/assets/stickers/clover.webp', left: 0.05, top: 0.3, width: 0.34, rot: 6, draggable: true },
+  { id: 'usr-girl', url: '/assets/stickers/girl.webp', left: 0.62, top: 0.34, width: 0.36, rot: -5, draggable: true },
+  { id: 'usr-shark', url: '/assets/stickers/shark.webp', left: 0.06, top: 0.5, width: 0.34, rot: 2, draggable: true },
+  { id: 'usr-seal', url: '/assets/stickers/seal.webp', left: 0.52, top: 0.48, width: 0.36, rot: 4, draggable: true },
 ]
 
 /* ============================================================================

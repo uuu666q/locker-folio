@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import BackToFolders from './BackToFolders'
 import PostersDeck from './PostersDeck'
-import MagazineBook from './MagazineBook'
-import IpDesign from './IpDesign'
 import './design.css'
 
-const SECTIONS = ['posters', 'magazine', 'ip'] as const
+const SECTIONS = ['posters'] as const
 
-/** SELECTED WORK › DESIGN —— 三段式：海报 / 杂志 / IP */
+/** SELECTED WORK › DESIGN —— 海报墙 */
 export default function DesignView() {
   const [sec, setSec] = useState(0)
   const railRef = useRef<HTMLDivElement>(null)
@@ -59,28 +57,7 @@ export default function DesignView() {
         <section className="dv__sec">
           <PostersDeck active={sec === 0} />
         </section>
-        <section className="dv__sec">
-          <MagazineBook active={sec === 1} />
-        </section>
-        <section className="dv__sec">
-          <IpDesign active={sec === 2} />
-        </section>
       </div>
-
-      {sec < SECTIONS.length - 1 && (
-        <div className="wv__foot">
-          <button
-            type="button"
-            className="wv__jump"
-            onClick={() => goto(sec + 1)}
-          >
-            {sec === 0 ? 'VIEW MAGAZINE' : 'VIEW IP DESIGN'}
-            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.3">
-              <path d="M6 1v9M2.4 6.6 6 10.2l3.6-3.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
-      )}
 
       <div className="dv__dots" aria-hidden>
         {SECTIONS.map((s, i) => (
