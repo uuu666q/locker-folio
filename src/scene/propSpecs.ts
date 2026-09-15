@@ -104,7 +104,7 @@ export type PropSpec = {
 export const CAVITY_PROPS: readonly PropSpec[] = [
   {
     name: 'Prop_FindAWord',
-    url: '/assets/obj/findaword2.webp',
+    url: 'assets/obj/findaword2.webp',
     // 贴柜腔后壁。后壁面片前表面在 z = −0.226，这里让开 0.011（约 2px）避免 z-fighting，
     // 又不至于看出来悬空
     at: [-0.505, 2.204, -0.215],
@@ -117,7 +117,7 @@ export const CAVITY_PROPS: readonly PropSpec[] = [
   },
   {
     name: 'Prop_Books',
-    url: '/assets/obj2/books.webp',
+    url: 'assets/obj2/books.webp',
     // 底边锁在上层隔板的上表面
     at: [-0.503, SHELF_Y[0], -0.05],
     width: 0.927,
@@ -131,7 +131,7 @@ export const CAVITY_PROPS: readonly PropSpec[] = [
   },
   {
     name: 'Prop_Turntable',
-    url: '/assets/obj2/turntable.webp',
+    url: 'assets/obj2/turntable.webp',
     // 底边锁在中层隔板的上表面
     at: [-0.522, SHELF_Y[1], 0.02],
     width: 0.591,
@@ -143,7 +143,7 @@ export const CAVITY_PROPS: readonly PropSpec[] = [
   },
   {
     name: 'Prop_Backpack',
-    url: '/assets/obj2/backpack.webp',
+    url: 'assets/obj2/backpack.webp',
     // 底边锁在柜腔底面
     at: [-0.519, OPENING_BOTTOM, 0.06],
     width: 0.835,
@@ -155,7 +155,7 @@ export const CAVITY_PROPS: readonly PropSpec[] = [
   },
   {
     name: 'Prop_SelectedWork',
-    url: '/assets/obj2/paperbox.webp',
+    url: 'assets/obj2/paperbox.webp',
     // 参考里它的下缘被背包挡住，看不到落在什么上面；
     // 这里按可见下缘（屏幕 y=500）定位，深度放在背包后面，遮挡关系与参考一致
     at: [-0.37, 0.661, -0.06],
@@ -174,7 +174,7 @@ export const CAVITY_PROPS: readonly PropSpec[] = [
 export const FRONT_PROPS: readonly PropSpec[] = [
   {
     name: 'Prop_Typewriter',
-    url: '/assets/obj2/typewriter.webp',
+    url: 'assets/obj2/typewriter.webp',
     /*
      * 这一件在深度和时刻上都**故意偏离**参考，两处偏离是同一个原因：门的扫掠。
      *
@@ -210,7 +210,7 @@ export const FRONT_PROPS: readonly PropSpec[] = [
   },
   {
     name: 'Prop_Guitar',
-    url: '/assets/obj2/guitar.webp',
+    url: 'assets/obj2/guitar.webp',
     // 同样反投到地面，解得 (1.988, 0, 0.348)：正好在柜体右前角外侧，与参考「靠着柜体」一致
     at: [1.977, 0, 0.348],
     width: 0.736,

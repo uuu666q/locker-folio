@@ -3,7 +3,7 @@ export default function Avatar({ className }: { className?: string }) {
   return (
     <img
       className={className}
-      src="/assets/avatar/avatar.png"
+      src="assets/avatar/avatar.png"
       alt="个人头像"
       draggable={false}
     />

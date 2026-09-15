@@ -151,13 +151,13 @@ export const GAMES = [
   {
     id: 'anchor',
     name: '记忆之锚',
-    cover: '/assets/game/anchor.jpg',
+    cover: 'assets/game/anchor.jpg',
     url: 'file:///D:/aaa/uuu/个人档案/游戏/记忆之锚',
   },
   {
     id: 'flappy',
     name: '弗莱皮鸟',
-    cover: '/assets/game/flappy.jpg',
+    cover: 'assets/game/flappy.jpg',
     url: 'file:///D:/aaa/uuu/个人档案/游戏/弗莱皮鸟',
   },
 ] as const
@@ -252,7 +252,7 @@ export const VIDEOS = [
     cn: '丛林动画短片',
     desc: '手绘风丛林场景动画短片',
     cover: 'jungle',
-    href: '/assets/video/jungle.mp4',
+    href: 'assets/video/jungle.mp4',
   },
   {
     no: '02',
@@ -260,7 +260,7 @@ export const VIDEOS = [
     cn: '山村新颜 · 纪实短片',
     desc: '乡村纪实短片《井底十载 山村新颜》',
     cover: 'village',
-    href: '/assets/video/village.mp4',
+    href: 'assets/video/village.mp4',
   },
   {
     no: '03',
@@ -268,7 +268,7 @@ export const VIDEOS = [
     cn: '毕业纪念短片',
     desc: '毕业季纪念短片',
     cover: 'graduation',
-    href: '/assets/video/graduation.mp4',
+    href: 'assets/video/graduation.mp4',
   },
   {
     no: '04',
@@ -276,7 +276,7 @@ export const VIDEOS = [
     cn: '国风动画短片',
     desc: '红树青烟 · 国风氛围动画短片',
     cover: 'guofeng',
-    href: '/assets/video/guofeng.mp4',
+    href: 'assets/video/guofeng.mp4',
   },
 ]
 

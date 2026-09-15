@@ -51,12 +51,12 @@ export const DOOR2_INNER_DECALS: readonly DecalSpec[] = [
   // 门板上的可拖动小物件。位置避开工牌（视觉中心偏右、top 0.18–0.55）
   // 与底部实体打字机（0.85 以下），尺寸、倾角、疏密刻意错开，
   // 形成自然的「冰箱贴」分布。
-  { id: 'usr-bunny', url: '/assets/stickers/bunny.webp', left: 0.03, top: 0.02, width: 0.36, rot: -4, draggable: true },
-  { id: 'usr-puppy', url: '/assets/stickers/puppy.webp', left: 0.5, top: 0.02, width: 0.42, rot: 3, draggable: true },
-  { id: 'usr-clover', url: '/assets/stickers/clover.webp', left: 0.05, top: 0.3, width: 0.34, rot: 6, draggable: true },
-  { id: 'usr-girl', url: '/assets/stickers/girl.webp', left: 0.62, top: 0.34, width: 0.36, rot: -5, draggable: true },
-  { id: 'usr-shark', url: '/assets/stickers/shark.webp', left: 0.06, top: 0.5, width: 0.34, rot: 2, draggable: true },
-  { id: 'usr-seal', url: '/assets/stickers/seal.webp', left: 0.52, top: 0.48, width: 0.36, rot: 4, draggable: true },
+  { id: 'usr-bunny', url: 'assets/stickers/bunny.webp', left: 0.03, top: 0.02, width: 0.36, rot: -4, draggable: true },
+  { id: 'usr-puppy', url: 'assets/stickers/puppy.webp', left: 0.5, top: 0.02, width: 0.42, rot: 3, draggable: true },
+  { id: 'usr-clover', url: 'assets/stickers/clover.webp', left: 0.05, top: 0.3, width: 0.34, rot: 6, draggable: true },
+  { id: 'usr-girl', url: 'assets/stickers/girl.webp', left: 0.62, top: 0.34, width: 0.36, rot: -5, draggable: true },
+  { id: 'usr-shark', url: 'assets/stickers/shark.webp', left: 0.06, top: 0.5, width: 0.34, rot: 2, draggable: true },
+  { id: 'usr-seal', url: 'assets/stickers/seal.webp', left: 0.52, top: 0.48, width: 0.36, rot: 4, draggable: true },
 ]
 
 /* ============================================================================
@@ -106,7 +106,7 @@ export const ID_CARD_AT: readonly [number, number, number] = [-0.0462, 0.55307, 
 /**
  * 图集要打包的全部贴图（去重后）。
  *
- * 工牌退出这张表之后，图集里 `/assets/obj/idcard2.webp` 那一格就成了「已备好、
+ * 工牌退出这张表之后，图集里 `assets/obj/idcard2.webp` 那一格就成了「已备好、
  * 场景层未排位」的多余项 —— pack-decals 对这个方向只警告不失败，重打图集时
  * 它会被顺手挤掉，都不影响运行时。素材本身仍在用：IdCardModel 按 URL 单独加载它。
  */

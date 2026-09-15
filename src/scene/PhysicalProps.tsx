@@ -251,7 +251,7 @@ export function BooksModel() {
 
 /** Thin printed paper mounted to a rigid, shadow-casting board. Bottom-centred. */
 export function FindAWordBoardModel() {
-  const texture = useTexture('/assets/obj/findaword2.webp')
+  const texture = useTexture('assets/obj/findaword2.webp')
   useEffect(() => configurePaperTexture(texture), [texture])
 
   return (
@@ -830,7 +830,7 @@ export function GuitarModel() {
  * contact shadow on the locker door instead of intersecting the vent slats.
  */
 export function PosterCardModel({
-  url = '/assets/obj/posterwall.jpg',
+  url = 'assets/obj/posterwall.jpg',
 }: {
   url?: string
 }) {
@@ -947,7 +947,7 @@ export function PolaroidCardModel({
   crop: PixelCrop
   size: readonly [width: number, height: number]
 }) {
-  const texture = useCroppedTexture('/assets/obj2/polaroids.jpg', POLAROID_SOURCE_SIZE, crop)
+  const texture = useCroppedTexture('assets/obj2/polaroids.jpg', POLAROID_SOURCE_SIZE, crop)
   const [cardWidth, cardHeight] = size
   const sourceAspect = crop.width / crop.height
   const maxPhotoWidth = cardWidth - 0.046
@@ -1195,11 +1195,11 @@ function makeRoundedRectShape(width: number, height: number, radius: number): Sh
  */
 export function IdCardModel() {
   const printMap = useCroppedTexture(
-    '/assets/obj/idcard2.webp',
+    'assets/obj/idcard2.webp',
     ID_CARD_SOURCE_SIZE,
     ID_CARD_PRINT,
   )
-  const ringMap = useCroppedTexture('/assets/obj/idcard2.webp', ID_CARD_SOURCE_SIZE, ID_CARD_RING)
+  const ringMap = useCroppedTexture('assets/obj/idcard2.webp', ID_CARD_SOURCE_SIZE, ID_CARD_RING)
 
   const bodyGeometry = useMemo(() => {
     // 挤的是收 3px 的芯，倒角再向外把腰撑回 ID_CARD_BODY_RECT / 33px 圆角

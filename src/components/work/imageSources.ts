@@ -44,7 +44,7 @@ export const SIZES = {
 
 /** 返回可直接展开到 `<img>` 上的 src / srcSet */
 export function workImage(dir: WorkAssetDir, name: string) {
-  const base = `/assets/${dir}/${name}`
+  const base = `assets/${dir}/${name}`
   const widths = VARIANTS[dir]
   const srcSet = [
     ...widths.map((w) => `${base}-${w}.webp ${w}w`),

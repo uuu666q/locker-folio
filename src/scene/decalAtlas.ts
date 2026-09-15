@@ -9,7 +9,7 @@
  * 黑色被平均进边缘 —— 每张贴花外面套一圈深色描边，正是要消除的东西。
  *
  * 现在直接用素材层在构建期打好的那一张：
- *   图片  `/assets/obj2/doorDecals.webp`（1408×1180，MaxRects 装箱，
+ *   图片  `assets/obj2/doorDecals.webp`（1408×1180，MaxRects 装箱，
  *         每块 16px 边距且边缘 RGB 已挤出，mip 0–4 级不串块）
  *   UV 表 `scripts/assets/decal-atlas.json`（`rect` 已按 three 的左下原点翻好 v）
  * 实测这张图里 alpha=0 区域的 RGB 均值是 76 而不是 0，扩张确实保住了。

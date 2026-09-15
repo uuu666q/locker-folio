@@ -75,7 +75,7 @@ function posterTextureUrl(name: string) {
   const width = typeof window === 'undefined' ? 1320 : window.innerWidth
   // Three 卡片实际显示上限约 248 CSS px；普通桌面用 400，Retina/大屏用 700。
   const variant = dpr > 1.25 || width > 1500 ? 700 : 400
-  return `/assets/posters/${name}-${variant}.webp`
+  return `assets/posters/${name}-${variant}.webp`
 }
 
 function configurePosterTexture(texture: Texture) {
