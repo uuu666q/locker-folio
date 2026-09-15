@@ -1,12 +1,12 @@
 {
-  "url": "/assets/obj2/doorDecals.webp",
+  "url": "assets/obj2/doorDecals.webp",
   "width": 896,
   "height": 412,
   "bytes": 64942,
   "version": "7d90505d",
   "pad": 16,
   "entries": {
-    "/assets/stickers/bunny.webp": {
+    "assets/stickers/bunny.webp": {
       "rect": [
         0.017857142857142856,
         0.08495145631067957,
@@ -26,7 +26,7 @@
         1648
       ]
     },
-    "/assets/stickers/clover.webp": {
+    "assets/stickers/clover.webp": {
       "rect": [
         0.5703125,
         0.04854368932038833,
@@ -46,7 +46,7 @@
         945
       ]
     },
-    "/assets/stickers/girl.webp": {
+    "assets/stickers/girl.webp": {
       "rect": [
         0.8136160714285714,
         0.5703883495145632,
@@ -66,7 +66,7 @@
         851
       ]
     },
-    "/assets/stickers/puppy.webp": {
+    "assets/stickers/puppy.webp": {
       "rect": [
         0.24888392857142858,
         0.46601941747572817,
@@ -86,7 +86,7 @@
         638
       ]
     },
-    "/assets/stickers/seal.webp": {
+    "assets/stickers/seal.webp": {
       "rect": [
         0.7879464285714286,
         0.08009708737864074,
@@ -106,7 +106,7 @@
         835
       ]
     },
-    "/assets/stickers/shark.webp": {
+    "assets/stickers/shark.webp": {
       "rect": [
         0.5703125,
         0.5946601941747574,

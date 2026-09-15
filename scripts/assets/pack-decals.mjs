@@ -81,12 +81,12 @@ const JSON_OUT = 'scripts/assets/decal-atlas.json'
 const MEMBERS = [
   // ── 门 2 内侧：自动推近的终点，分辨率要求最高 ──
   // 六张用户贴纸；maxW = 1164 设备像素/门宽 × decalSpecs 里的门宽比例
-  { url: '/assets/stickers/bunny.webp', maxW: 175, why: '门宽 0.15' },
-  { url: '/assets/stickers/puppy.webp', maxW: 256, why: '门宽 0.22' },
-  { url: '/assets/stickers/clover.webp', maxW: 163, why: '门宽 0.14' },
-  { url: '/assets/stickers/girl.webp', maxW: 151, why: '门宽 0.13' },
-  { url: '/assets/stickers/shark.webp', maxW: 186, why: '门宽 0.16' },
-  { url: '/assets/stickers/seal.webp', maxW: 163, why: '门宽 0.14' },
+  { url: 'assets/stickers/bunny.webp', maxW: 175, why: '门宽 0.15' },
+  { url: 'assets/stickers/puppy.webp', maxW: 256, why: '门宽 0.22' },
+  { url: 'assets/stickers/clover.webp', maxW: 163, why: '门宽 0.14' },
+  { url: 'assets/stickers/girl.webp', maxW: 151, why: '门宽 0.13' },
+  { url: 'assets/stickers/shark.webp', maxW: 186, why: '门宽 0.16' },
+  { url: 'assets/stickers/seal.webp', maxW: 163, why: '门宽 0.14' },
 ]
 
 /** texture-report.mjs 判定必须走混合的块；其余全部 cutout */
@@ -331,7 +331,7 @@ for (const b of placed.sort((a, z) => a.url.localeCompare(z.url))) {
   }
   const tag = b.sw < b.srcW ? `缩 ${((b.sw / b.srcW) * 100).toFixed(0)}%` : '原分辨率'
   console.log(
-    `  ${b.url.replace('/assets/', '').padEnd(20)} ${String(b.srcW).padStart(4)}×${String(b.srcH).padEnd(4)} → ` +
+    `  ${b.url.replace('assets/', '').padEnd(20)} ${String(b.srcW).padStart(4)}×${String(b.srcH).padEnd(4)} → ` +
       `${String(b.sw).padStart(4)}×${String(b.sh).padEnd(4)} @ (${String(ox).padStart(4)},${String(oy).padStart(4)})  ${tag.padEnd(9)}${b.why}`,
   )
 }
