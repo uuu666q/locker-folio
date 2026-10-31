@@ -1,0 +1,78 @@
+/* Applied to the current history-content edition without changing its layout or copy. */
+@font-face{font-family:HuawaiJiandu;src:url('../assets/fonts/tengxiang-fanxiaoge-jiandu.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:HuawaiGuanjun;src:url('../assets/fonts/fangzheng-guanjun.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{--hand:HuawaiGuanjun,KaiTi,serif;--button-ink:#3b5342;--button-paper:#fff5df}
+html,body,#app,#app :is(h1,h2,h3,p,button,small,strong,em,span,aside,a,b,i,div){font-family:var(--hand);font-weight:400;font-synthesis:none}
+#app .home h1{font-family:HuawaiJiandu,HuawaiGuanjun,KaiTi,serif;font-weight:400;font-style:normal;font-synthesis:none}
+
+/* Every action uses one brush silhouette, including navigation and playback. */
+#app button.sketch-action{
+  position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;
+  color:var(--button-paper)!important;background:transparent!important;border:0!important;
+  border-radius:0;box-shadow:none!important;text-shadow:none!important;text-decoration:none!important;
+  opacity:1;min-height:44px;padding:10px 17px;gap:8px;transition:color .2s;
+}
+#app button.sketch-action::before{
+  content:'';display:block!important;position:absolute;z-index:-1;pointer-events:none;
+  inset:0 -3px!important;background:var(--button-ink)!important;border:0!important;border-radius:0;
+  mask:url('../assets/shared/brush-stroke.svg') center/100% 100% no-repeat!important;
+  clip-path:none!important;box-shadow:none!important;transform:none!important;opacity:1!important;
+  transition:background .2s;
+}
+#app button.sketch-action::after{display:none!important}
+#app button.sketch-action:hover::before,#app button.sketch-action:focus-visible::before{background:#526b52!important}
+#app button.sketch-action:focus-visible{outline:2px dashed #b68958;outline-offset:5px}
+#app button.sketch-action:disabled{opacity:.55}
+#app button.sketch-action .action-label{color:inherit}
+#app .site-header nav{gap:15px}
+#app .site-header nav button.sketch-action{padding:9px 15px;font-size:19px}
+#app .site-header nav button.active::before{background:#526b52!important}
+#app .home-actions button.primary{padding:12px 27px;min-height:63px}
+#app .home-actions button.text-button{padding:9px 19px;min-height:44px}
+#app .result-actions{gap:17px}
+#app .result-actions button.sketch-action{min-height:50px;padding:11px 21px}
+#app .site-footer button.sketch-action{min-height:35px;padding:6px 12px;font-size:13px}
+#app .drawing-toolbar button.sketch-action{padding:8px 12px}
+#app .modal-close{
+  isolation:isolate;width:40px;height:40px;min-height:40px;color:var(--button-paper);font-size:27px;
+  background:transparent;border:0;transform:none;box-shadow:none;
+}
+#app .modal-close::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--button-ink);mask:url('../assets/shared/brush-stroke.svg') center/100% 100% no-repeat}
+#app .modal-close:hover::before{background:#526b52}
+#app .directory-compact-index button{isolation:isolate;background:transparent;border:0;border-radius:0;color:var(--button-paper);box-shadow:none}
+#app .directory-compact-index button::before{content:'';position:absolute;inset:0 -2px;z-index:-1;pointer-events:none;background:var(--button-ink);mask:url('../assets/shared/brush-stroke.svg') center/100% 100% no-repeat}
+#app .directory-compact-index :is(small,.index-number){color:var(--button-paper)}
+
+/* An unobtrusive vertical rail on the right, below navigation and above subtitles. */
+#app[data-phase=VIDEO] .stage .video-controls{
+  position:absolute;left:auto;right:clamp(22px,3vw,54px);top:50%;bottom:auto;transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:14px;
+  width:142px;height:auto;padding:0;z-index:10;background:none;border:0;box-shadow:none;clip-path:none;
+}
+#app[data-phase=VIDEO] .video-controls button.sketch-action{width:100%;font-size:18px;min-height:46px;padding:9px 11px;letter-spacing:1px}
+#app[data-phase=VIDEO] .stage .video-progress{
+  order:1;display:flex;align-items:center;justify-content:center;gap:8px;flex:none;
+  width:100%;max-width:none;padding:8px 10px;color:var(--button-paper);background:#26352be8;
+  border-radius:2px;text-shadow:none;
+}
+#app[data-phase=VIDEO] .video-progress>span{font-size:14px;min-width:33px}
+#app[data-phase=VIDEO] .video-progress .progress-track{flex:1;background:#fff5df40}
+#app[data-phase=VIDEO] .video-progress .progress-track i{background:#fff5df}
+@media(max-width:760px){
+  #app .site-header nav,#app[data-notebook=true] .site-header nav{gap:9px}
+  #app .site-header nav button.sketch-action{padding:7px 9px;font-size:15px;gap:4px;min-height:40px}
+  #app .site-header .action-mark{width:18px;height:18px}
+  #app .home-actions button.primary{min-height:59px}
+  #app .result-actions{gap:12px}
+  #app .result-actions button.sketch-action{padding:8px 13px;min-height:44px}
+  #app .drawing-toolbar button.sketch-action{font-size:16px;min-height:40px;padding:7px 10px}
+  #app[data-phase=VIDEO] .stage .video-controls{right:13px;top:43%;width:112px;gap:11px}
+  #app[data-phase=VIDEO] .video-controls button.sketch-action{font-size:16px;min-height:44px;padding:8px 6px;gap:5px;letter-spacing:0}
+  #app[data-phase=VIDEO] .video-controls .action-mark{width:18px;height:18px}
+  #app[data-phase=VIDEO] .stage .video-progress{padding:7px 8px;gap:5px}
+}
+@media(max-height:560px){
+  #app[data-phase=VIDEO] .stage .video-controls{top:54%;width:122px;gap:7px}
+  #app[data-phase=VIDEO] .video-controls button.sketch-action{min-height:37px;padding:6px 8px;font-size:16px}
+  #app[data-phase=VIDEO] .stage .video-progress{padding:5px 8px}
+}

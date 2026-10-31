@@ -152,13 +152,19 @@ export const GAMES = [
     id: 'anchor',
     name: '记忆之锚',
     cover: 'assets/game/anchor.jpg',
-    url: 'file:///D:/aaa/uuu/个人档案/游戏/记忆之锚',
+    url: 'file:///D:/aaa/uuu/个人档案cy/游戏/记忆之锚',
   },
   {
     id: 'flappy',
     name: '弗莱皮鸟',
     cover: 'assets/game/flappy.jpg',
-    url: 'file:///D:/aaa/uuu/个人档案/游戏/弗莱皮鸟',
+    url: 'file:///D:/aaa/uuu/个人档案cy/游戏/弗莱皮鸟',
+  },
+  {
+    id: 'outside-the-frame',
+    name: '画外的一笔',
+    cover: 'assets/game/outside-the-frame.png',
+    url: 'games/huawai/index.html',
   },
 ] as const
 
@@ -277,6 +283,14 @@ export const VIDEOS = [
     desc: '红树青烟 · 国风氛围动画短片',
     cover: 'guofeng',
     href: 'assets/video/guofeng.mp4',
+  },
+  {
+    no: '05',
+    en: 'INK ANIMATION',
+    cn: '另一种相逢',
+    desc: '以水墨动画讲述猫咪与古院的一场相逢',
+    cover: 'another-encounter',
+    href: 'assets/video/another-encounter.mp4',
   },
 ]
 

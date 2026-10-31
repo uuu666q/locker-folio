@@ -1,0 +1,27 @@
+{
+  "home": {
+    "src": "./assets/videos/web/opening.0e1e9240be74.mp4",
+    "title": "化觉巷清真大寺",
+    "original": "首页.mp4"
+  },
+  "courtyard-01": {
+    "src": "./assets/videos/web/courtyard-01.3bcefebe8dc7.mp4",
+    "title": "木牌楼",
+    "original": "木牌坊.mp4"
+  },
+  "courtyard-02": {
+    "src": "./assets/videos/web/courtyard-02.458c7eb33e79.mp4",
+    "title": "石牌坊",
+    "original": "石牌坊.mp4"
+  },
+  "courtyard-03": {
+    "src": "./assets/videos/web/courtyard-03.647767d57d15.mp4",
+    "title": "省心楼",
+    "original": "省心楼.mp4"
+  },
+  "courtyard-04": {
+    "src": "./assets/videos/web/courtyard-04.8e93488a2900.mp4",
+    "title": "礼拜大殿",
+    "original": "礼拜大殿.mp4"
+  }
+}

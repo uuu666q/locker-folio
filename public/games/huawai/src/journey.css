@@ -1,0 +1,93 @@
+/* A small functional progress line below navigation, never on the drawing target. */
+.journey-steps{position:absolute;z-index:22;top:98px;right:4vw;display:flex;align-items:start;gap:6px;padding:10px 13px 13px;margin:0;list-style:none;color:#827760;pointer-events:none;isolation:isolate}
+.journey-steps::before{content:'';position:absolute;inset:0 -7px;z-index:-1;background:#fcf5e826;mask:url('../assets/shared/brush-stroke.svg') center/100% 100% no-repeat;box-shadow:none}
+.journey-steps li{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;width:73px;font-size:17px;letter-spacing:1px;white-space:nowrap}
+.journey-mark{display:grid;place-items:center;width:33px;height:32px;color:#8a806c}
+.journey-mark svg{width:32px;height:32px;overflow:visible}
+.journey-orbit{opacity:0;stroke:#ab5d42;stroke-width:.8}
+.journey-steps li:not(:last-child)::after{content:'';position:absolute;left:calc(50% + 21px);top:16px;width:36px;height:3px;background:url('../assets/shared/pencil-underline.svg') center/100% 3px no-repeat;opacity:.35}
+.journey-steps [aria-current=step],.journey-steps [aria-current=step] .journey-mark{color:#995337}
+.journey-steps [aria-current=step] .journey-orbit{opacity:.9}
+.journey-steps [aria-current=step] .journey-label{background:url('../assets/shared/pencil-underline.svg') bottom/100% 4px no-repeat;padding-bottom:5px;margin-bottom:-5px}
+.journey-steps .passed,.journey-steps .passed .journey-mark{color:#4e6c53}
+.journey-steps .passed::after{opacity:.7}
+#app[data-notebook=true] .journey-steps{top:100px;right:4vw}
+.map-colors{position:absolute;left:50%;top:0;height:100%;width:auto;max-width:none;aspect-ratio:1083/1452;transform:translateX(-50%);pointer-events:none;mix-blend-mode:multiply;overflow:visible}
+.map-colors{visibility:hidden}
+.map-original[data-ready=true]+.map-colors{visibility:visible}
+.map-original[data-ready=true]+.map-colors .court-watercolor{animation:mapPigment .65s ease-out both}
+.map-chapter.is-complete .map-dot{background:#bfd0b49c;border-color:#4c7153;color:#305e3f}
+.map-chapter.is-complete .map-caption small{color:#3f6a44}
+@keyframes mapPigment{from{opacity:0}to{opacity:1}}
+/* Only the paper print rolls away; the outside cover and binding do not move. */
+html[data-page-turn]::view-transition{pointer-events:none}
+html[data-page-turn]::view-transition-group(root){animation:none;z-index:1}
+html[data-page-turn]::view-transition-image-pair(root){isolation:isolate}
+html[data-page-turn]::view-transition-old(root){z-index:2;clip-path:var(--turn-clip);animation:paperHold 1400ms linear both;mix-blend-mode:normal}
+html[data-page-turn]::view-transition-new(root){z-index:1;animation:none;mix-blend-mode:normal}
+html[data-page-turn]::view-transition-group(paper-curl){z-index:3;animation:none}
+html[data-page-turn]::view-transition-old(paper-curl){display:none}
+html[data-page-turn]::view-transition-new(paper-curl){animation:paperHold 1400ms linear both;mix-blend-mode:normal}
+@keyframes paperHold{from{opacity:1}to{opacity:1}}
+.paper-curl{position:fixed;inset:0;z-index:1000;pointer-events:none;view-transition-name:paper-curl}
+.paper-curl>svg{display:block;width:100%;height:100%}
+.paper-curl .fallback-sheet{display:none}.paper-turn-fallback .fallback-sheet{display:block}
+html[data-page-turn=reduced] .paper-curl{visibility:hidden}
+html[data-page-turn=reduced]::view-transition-old(root){clip-path:none;animation:paperReducedOut 120ms ease both}
+@keyframes paperReducedOut{from{opacity:1}to{opacity:0}}
+@media(max-width:760px){
+  .journey-steps,#app[data-notebook=true] .journey-steps{top:75px;right:5vw;padding:6px 9px 8px;gap:3px}
+  .journey-steps li{font-size:14px;gap:1px;letter-spacing:0;width:61px}
+  .journey-mark,.journey-mark svg{width:27px;height:27px}
+  .journey-steps li:not(:last-child)::after{left:calc(50% + 18px);width:25px;top:13px}
+  /* The figure is low in the frame, so its tools remain above it, below the steps. */
+  #app .stage[data-tool=figure] .drawing-toolbar{top:145px}
+}
+@media(max-height:560px) and (min-width:761px){.journey-steps,#app[data-notebook=true] .journey-steps{top:73px;padding:4px 10px 7px}.journey-steps li{font-size:14px;width:63px}.journey-mark,.journey-mark svg{height:25px;width:25px}.journey-steps li:not(:last-child)::after{top:12px;width:25px}}
+@media(prefers-reduced-motion:reduce){.map-original[data-ready=true]+.map-colors .court-watercolor{animation:none}}
+
+/* Stable controls, and a lower cover composition. */
+#app .home-copy{top:auto;bottom:14svh;left:6.5vw;transform:none;width:auto;max-width:84vw;align-items:flex-start;text-align:left;padding:0;}
+#app .home h1{font-size:clamp(75px,9.2vw,142px);letter-spacing:.015em;text-indent:0;line-height:1.15;margin:0 0 22px;}
+#app .home .intro{font-size:clamp(23px,2.1vw,30px);letter-spacing:3px;text-indent:0;}
+#app .home-actions{align-items:flex-start;flex-direction:row;justify-content:flex-start;flex-wrap:wrap;gap:22px;margin-top:29px;}
+#app .site-footer,#app[data-notebook=true] .site-footer{position:fixed;left:auto;right:43px;bottom:48px;z-index:25;min-height:35px;font-size:13px;visibility:visible!important}
+#app .site-footer .reset{margin:0;opacity:1}
+#app .site-footer button.sketch-action{font-size:13px!important}
+#app .site-footer .music-toggle{position:fixed;left:83px;bottom:48px;margin:0;min-height:35px;padding:6px 12px;font-size:13px}
+html[data-music=playing] .music-toggle .action-mark{opacity:1}
+html:not([data-music=playing]) .music-toggle .action-mark{opacity:.65}
+#app .stage .drawing-toolbar{bottom:87px}
+#app .stage[data-tool=figure] .drawing-toolbar{bottom:auto}
+#app .result-panel{bottom:88px}
+.scene-video{opacity:0;transition:opacity .38s ease;will-change:opacity}
+.scene-video.film-visible{opacity:1}
+.film-loading{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:10px 18px;color:#685c44;background:#fbf4e8e8;font-size:18px;z-index:5;animation:film-wait .7s step-end both}
+@keyframes film-wait{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){#app .home-copy{left:6vw;bottom:16svh}#app .home h1{font-size:clamp(51px,11.4vw,84px);letter-spacing:0;margin-bottom:18px;}#app .home-actions{gap:12px;margin-top:24px;}#app .home .intro{font-size:22px;letter-spacing:1px;}#app .site-footer,#app[data-notebook=true] .site-footer{right:20px;bottom:34px}#app .stage .drawing-toolbar{bottom:76px}#app .stage[data-tool=figure] .drawing-toolbar{bottom:auto}#app .result-panel{bottom:85px}}
+@media(max-height:560px) and (min-width:761px){#app .home-copy{bottom:16svh}#app .home h1{font-size:78px;margin-bottom:10px;}#app .home-actions{margin-top:16px;}#app .stage .drawing-toolbar{bottom:76px}#app .stage[data-tool=figure] .drawing-toolbar{bottom:auto}}
+@media(max-width:760px){#app .site-footer .music-toggle{left:40px;bottom:34px}#app .site-footer .music-toggle .action-mark{display:block;width:15px;height:15px}}
+
+/* The directory shares the journal's heading and two balanced label columns. */
+#app .directory-heading{position:absolute;z-index:5;left:94px;top:92px;pointer-events:none;}
+#app .directory-heading h1{font-size:39px;line-height:1.45;letter-spacing:3px;margin:0;}
+@media(min-width:761px){#app .map-canvas{left:calc(50% + clamp(28px,4vw,65px));}}
+#app .map-caption em{display:block;font-size:22px;line-height:1.6;letter-spacing:2px;margin-top:5px;}
+#app .map-caption::before{border-top:1.2px solid #80684da6;opacity:1;}
+#app[data-notebook=true] .map-chapter[data-id=courtyard-04] .map-caption{--label-drop:94px;margin-top:var(--label-drop);}
+#app[data-notebook=true] .map-chapter[data-id=courtyard-04] .map-caption::before{top:calc(50% - var(--label-drop));height:var(--label-drop);border-top:0;border-bottom:1.2px solid #80684da6;border-right:1.2px solid #80684da6;transform:none;}
+#app .directory-compact-index small{font-size:16px;}
+@media(max-height:780px) and (min-width:761px){#app .directory-heading h1{font-size:31px;}#app[data-notebook=true] .map-chapter[data-id=courtyard-04] .map-caption{--label-drop:100px;}}
+@media(max-width:1050px) and (min-width:761px){#app .directory-heading{left:85px;}#app .map-caption em{font-size:19px;}}
+@media(max-width:760px){
+  #app .directory-heading{left:48px;top:95px;}
+  #app .directory-heading h1{font-size:28px;letter-spacing:1px;}
+  #app .directory-compact-index button{min-height:96px;gap:7px;padding:9px 10px;}
+  #app .directory-compact-index button::before{mask-size:100% 140%;}
+  #app .directory-compact-index .index-number{font-size:22px;}
+  #app .directory-compact-index strong{font-size:21px;line-height:1.4;letter-spacing:0;}
+  #app .directory-compact-index small{font-size:16px;white-space:nowrap;line-height:1.45;}
+  #app .directory-compact-index .index-action{display:block;}
+  #app .directory-compact-index .index-status{display:block;font-size:13px;opacity:.8;margin-top:2px;}
+  #app[data-notebook=true] .map-canvas{top:43%;height:44svh;width:78.2222svh;}
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 40 48">
+<defs><linearGradient id="wood"><stop stop-color="#583b2c"/><stop offset=".42" stop-color="#c99d62"/><stop offset=".65" stop-color="#e1bd7f"/><stop offset="1" stop-color="#835031"/></linearGradient><linearGradient id="brass"><stop stop-color="#62523c"/><stop offset=".4" stop-color="#ecdbab"/><stop offset="1" stop-color="#a08a5c"/></linearGradient><linearGradient id="hair" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#bd9e6c"/><stop offset=".45" stop-color="#695138"/><stop offset="1" stop-color="#292c25"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="180%" height="180%"><feDropShadow dx=".7" dy="1" stdDeviation=".65" flood-opacity=".3"/></filter></defs>
+<g stroke-linejoin="round" filter="url(#shadow)">
+<path d="M17 29 29 5Q31 1 34 3T34 8L22 32Z" fill="url(#wood)" stroke="#624733" stroke-width=".8"/>
+<path d="M30 7 21 26" fill="none" stroke="#f3d8a5" stroke-width=".7" opacity=".65"/>
+<path d="m17 26 7 4-3 6-7-4Z" fill="url(#brass)" stroke="#756142" stroke-width=".8"/>
+<path d="m17 27 6 3m-7.5 0 6 3" fill="none" stroke="#ffebbc" stroke-width=".5"/>
+<path d="m14 32 7 4c-3 7-8 8-15 7 4-2 1-8 8-11Z" fill="url(#hair)" stroke="#414032" stroke-width=".8"/>
+<path d="M15 34c-4 3-3 6-7 8m10-7c-2 4-4 5-7 7" fill="none" stroke="#d0b388" stroke-width=".5" opacity=".8"/>
+<path d="m14 29 8 4" stroke="#a74f38" stroke-width="1.7"/></g></svg>

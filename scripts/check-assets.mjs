@@ -17,7 +17,7 @@ const HTML = target ? join(ROOT, 'dist/index.html') : join(ROOT, 'index.html')
 /** 首屏预算（§12.1）；作品页素材不算首屏 */
 const BUDGET = {
   heroTransferKiB: 1600, // 首屏阻塞素材的传输体积
-  totalTransferMiB: 72, // 全部静态素材；已接入作者真实作品集（3 部本地视频约 43MiB + 42 张照片/10 张海报多档变体），预算随内容扩容，仍用于拦截异常膨胀
+  totalTransferMiB: 96, // 全部静态素材；加入第 5 部影像和游戏封面后约 92MiB，保留少量增长空间并拦截异常膨胀
   heroDecodedMiB: 48, // 首屏 GPU 纹理 / RGBA 解码估算
   entryGzipKiB: 120, // 入口 JS 的 gzip 上限：Three/R3F 必须在 lazy 边界之外
 }
@@ -63,15 +63,15 @@ const srcFiles = walk(join(ROOT, 'src')).filter((f) =>
 const referenced = new Set()
 for (const f of srcFiles) {
   const text = readFileSync(f, 'utf8')
-  for (const m of text.matchAll(/\/assets\/[A-Za-z0-9_\-/]+\.(?:webp|png|jpg|jpeg|avif|glb|gltf|ktx2|hdr|mp4)/g)) {
-    referenced.add(m[0])
+  for (const m of text.matchAll(/\/?assets\/[A-Za-z0-9_\-/]+\.(?:webp|png|jpg|jpeg|avif|glb|gltf|ktx2|hdr|mp4)/g)) {
+    referenced.add('/' + m[0].replace(/^\//, ''))
   }
 }
 // 模板字符串拼出来的路径（如 `/assets/posters/${x}.webp`）按目录整体放行
 const dynamicDirs = new Set()
 for (const f of srcFiles) {
   const text = readFileSync(f, 'utf8')
-  for (const m of text.matchAll(/\/assets\/([A-Za-z0-9_\-/]+)\/\$\{/g)) dynamicDirs.add(m[1])
+  for (const m of text.matchAll(/\/?assets\/([A-Za-z0-9_\-/]+)\/\$\{/g)) dynamicDirs.add(m[1])
 }
 
 for (const ref of referenced) {
@@ -110,7 +110,7 @@ try {
 for (const f of assetFiles) {
   const size = statSync(f).size
   totalBytes += size
-  const rel = relative(join(ROOT, 'public/assets'), f)
+  const rel = relative(join(ROOT, 'public/assets'), f).replaceAll('\\', '/')
   const dir = rel.split('/')[0]
   if (HERO_DIRS.includes(dir)) {
     heroBytes += size
@@ -150,9 +150,9 @@ if (!target) {
     ['清单 bytes/version 与磁盘对账', 'scripts/assets/sync-manifest.mjs'],
   ]) {
     if (!existsSync(join(ROOT, script))) continue
-    const r = spawnSync('bun', [script, '--check'], { cwd: ROOT, encoding: 'utf8' })
+    const r = spawnSync(process.execPath, [script, '--check'], { cwd: ROOT, encoding: 'utf8' })
     if (r.status !== 0) {
-      const tail = (r.stdout || r.stderr || '').trim().split('\n').slice(-2).join(' / ')
+      const tail = ([r.stdout, r.stderr, r.error?.message].filter(Boolean).join('\n')).trim().split('\n').slice(-2).join(' / ')
       errors.push(`${label}未通过：${tail}`)
     } else {
       notes.push(`${label} 通过`)
@@ -160,11 +160,16 @@ if (!target) {
   }
 }
 
+const gameBytes = walk(join(PUBLIC_DIR, 'games')).reduce((sum, f) => sum + statSync(f).size, 0)
+const gameMiB = gameBytes / 1024 / 1024
+notes.push(`按需打开的交互作品：${gameMiB.toFixed(2)}MiB（不计入作品集首屏）`)
+if (gameMiB > 512) errors.push(`交互作品素材超过预算：${gameMiB.toFixed(2)}MiB > 512MiB`)
+
 // ── 5. 入口 JS 预算：3D 依赖不能进主包 ──────────────────────────
 // 只在检查 dist 时有意义
 if (target) {
   const { gzipSync } = await import('node:zlib')
-  const entries = walk(join(ROOT, 'dist/assets')).filter((f) => /\/index-[^/]+\.js$/.test(f))
+  const entries = walk(join(ROOT, 'dist/assets')).filter((f) => /\/index-[^/]+\.js$/.test(f.replaceAll('\\', '/')))
   for (const f of entries) {
     const raw = readFileSync(f)
     const gz = gzipSync(raw).length / 1024

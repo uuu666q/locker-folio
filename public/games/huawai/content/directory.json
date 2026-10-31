@@ -1,0 +1,40 @@
+{
+  "image": "./assets/shared/courtyard-map.png",
+  "extension": "./assets/shared/paper-extension.png",
+  "width": 1083,
+  "height": 1452,
+  "chapters": [
+    {
+      "id": "courtyard-01",
+      "point": [
+        689,
+        1226
+      ],
+      "side": "right"
+    },
+    {
+      "id": "courtyard-02",
+      "point": [
+        608,
+        979
+      ],
+      "side": "left"
+    },
+    {
+      "id": "courtyard-03",
+      "point": [
+        521,
+        658
+      ],
+      "side": "right"
+    },
+    {
+      "id": "courtyard-04",
+      "point": [
+        364,
+        178
+      ],
+      "side": "left"
+    }
+  ]
+}

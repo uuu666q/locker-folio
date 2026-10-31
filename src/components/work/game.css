@@ -1,13 +1,14 @@
 .gv {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   /* 与 design 页一致的纸白舞台 */
   animation: gvIn 0.5s var(--ease-out);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
   gap: 34px;
-  padding: 0 40px;
+  padding: 40px;
 }
 
 @keyframes gvIn {
@@ -127,6 +128,7 @@
 .gv__hint code {
   display: block;
   font-family: var(--font-mono);
+  overflow-wrap: anywhere;
   font-size: 11px;
   color: rgba(30, 35, 45, 0.8);
   background: rgba(30, 35, 45, 0.06);
@@ -137,7 +139,7 @@
 @media (max-width: 720px) {
   .gv {
     gap: 22px;
-    padding: 0 20px;
+    padding: 72px 20px 28px;
   }
   .gv__en {
     font-size: 38px;
@@ -153,3 +155,12 @@
     height: 264px;
   }
 }
+
+.gv__play-label { font-family: var(--font-cn); font-size: 12px; color: #1b28d8; }
+.gv-player { display: flex; flex-direction: column; overflow: hidden; background: #f3efe5; }
+.gv-player__bar { display: flex; align-items: center; gap: 24px; padding: 14px 80px 14px 24px; min-height: 64px; flex-shrink: 0; border-bottom: 1px solid #d8cfbd; font-family: var(--font-cn); }
+.gv-player__bar button { border: 1px solid #d8cfbd; border-radius: 999px; background: #fffaf0; color: #25221d; padding: 10px 16px; font: inherit; cursor: pointer; }
+.gv-player__bar button:focus-visible { outline: 2px solid #1b28d8; outline-offset: 3px; }
+.gv-player__bar span { font-weight: 700; }
+.gv-player__frame { width: 100%; flex: 1; min-height: 0; border: 0; background: #f3efe5; }
+@media (max-width: 600px) { .gv-player__bar { padding-left: 12px; gap: 10px; font-size: 12px; } }

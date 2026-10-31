@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="48" viewBox="0 0 40 48">
+<defs><linearGradient id="wood"><stop stop-color="#754832"/><stop offset=".4" stop-color="#d2a36b"/><stop offset=".65" stop-color="#e4c087"/><stop offset="1" stop-color="#95603f"/></linearGradient><linearGradient id="metal"><stop stop-color="#66746e"/><stop offset=".4" stop-color="#d4ddd4"/><stop offset=".6" stop-color="#f1edda"/><stop offset="1" stop-color="#81918b"/></linearGradient><linearGradient id="hair" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#c7b185"/><stop offset=".55" stop-color="#b29b76"/><stop offset=".6" stop-color="#73928b"/><stop offset="1" stop-color="#426b67"/></linearGradient><filter id="shadow" x="-30%" y="-30%" width="180%" height="180%"><feDropShadow dx=".7" dy="1" stdDeviation=".65" flood-opacity=".3"/></filter></defs>
+<g stroke-linejoin="round" filter="url(#shadow)">
+<path d="m20 26 2-7 7-14q2-3 5-1t1 4l-8 14-1 7Z" fill="url(#wood)" stroke="#785138" stroke-width=".8"/>
+<ellipse cx="31.4" cy="7.2" rx="1.3" ry="1.9" transform="rotate(30 31.4 7.2)" fill="#654b37"/>
+<path d="m29 12-5 10" stroke="#f0d2a0" stroke-width=".8"/>
+<path d="m14 24 15 8-4 7-15-8Z" fill="url(#metal)" stroke="#677870" stroke-width=".8"/>
+<path d="m13 27 14 8m-13-6 10 5" stroke="#eff1de" stroke-width=".6"/>
+<path d="m10 31 15 8-6 7-4-2-2-2-3-1-3 1-3-3Z" fill="url(#hair)" stroke="#58716a" stroke-width=".75"/>
+<path d="m12 33-6 7m9-6-6 7m9-5-6 6m9-5-5 7" fill="none" stroke="#ddd0a9" stroke-width=".55" opacity=".75"/></g></svg>

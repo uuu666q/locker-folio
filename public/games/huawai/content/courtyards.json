@@ -1,0 +1,1210 @@
+[
+  {
+    "id": "courtyard-01",
+    "order": 1,
+    "name": "第一进院",
+    "building": "木牌楼",
+    "theme": "一笔见飞檐",
+    "action": "描檐线",
+    "prompt": "沿虚线描画屋檐",
+    "narration": "飞檐与木构，让这座清真寺呈现出中国传统建筑的样貌。",
+    "subtitleTimeline": [
+      {
+        "start": 0,
+        "end": 6,
+        "text": "飞檐与木构，让这座清真寺呈现出中国传统建筑的样貌。"
+      }
+    ],
+    "assets": {
+      "panorama": "./assets/courtyard-01/sketch-scene.jpg",
+      "focusReference": "./assets/courtyard-01/sketch-scene.jpg",
+      "sketchBase": "./assets/courtyard-01/sketch-scene.jpg",
+      "sketchComplete": "./assets/courtyard-01/sketch-scene.jpg",
+      "interactionLayer": "./assets/courtyard-01/sketch-scene.jpg",
+      "watercolorStart": "./assets/courtyard-01/sketch-scene.jpg",
+      "watercolorEnd": "./assets/courtyard-01/sketch-scene.jpg",
+      "realityResult": "./assets/courtyard-01/overview-photo.jpg",
+      "video": "./assets/videos/web/courtyard-01-culture.dfae2ad70f38.mp4",
+      "sketchThumbnail": "./assets/courtyard-01/sketch-scene.jpg"
+    },
+    "media": {
+      "simulationDuration": 6,
+      "imagesArePlaceholders": false,
+      "videoReady": true,
+      "contentVerified": false,
+      "realityIsVerifiedPhoto": true,
+      "artworkReady": true,
+      "videoOriginal": "木牌坊文化短片.mp4",
+      "useOverlaySubtitles": false,
+      "videoVersion": "dfae2ad70f38"
+    },
+    "photoSource": {
+      "author": "待核实",
+      "url": null,
+      "capturedAt": "未知（未读取或核实拍摄日期）",
+      "license": "待核实",
+      "reviewStatus": "用户提供的实拍照片；对应院落由用户确认，年代、作者及许可待核实",
+      "file": "Xian_Great_Mosque_14_(5459230086).jpg"
+    },
+    "transitions": {
+      "focus": 1500,
+      "penFinish": 400,
+      "sketchToInk": 1000,
+      "tailHold": 650,
+      "inkToReality": 1300,
+      "replay": 650,
+      "skip": 650,
+      "blackout": 320,
+      "sceneFade": 900
+    },
+    "hotspot": {
+      "x": 0.49559015679442514,
+      "y": 0.20034843205574915,
+      "label": "木牌楼 · 描檐线"
+    },
+    "focusCrop": {
+      "x": 0.12,
+      "y": 0.03,
+      "width": 0.76,
+      "height": 0.6434843205574913
+    },
+    "safeAreas": {
+      "subtitles": [
+        0.2,
+        0.74,
+        0.6,
+        0.1
+      ],
+      "result": [
+        0.04,
+        0.72,
+        0.92,
+        0.24
+      ]
+    },
+    "interaction": {
+      "type": "trace",
+      "threshold": 0.85,
+      "radius": 0.056,
+      "paths": [
+        [
+          [
+            0.11089790448343081,
+            0.1307125839289582
+          ],
+          [
+            0.1383101851851852,
+            0.18215291314706522
+          ],
+          [
+            0.19770346003898634,
+            0.22276369937188653
+          ],
+          [
+            0.3187743664717349,
+            0.24577647823261856
+          ],
+          [
+            0.48324805068226123,
+            0.25525232835174355
+          ],
+          [
+            0.6439144736842105,
+            0.25119124972926143
+          ],
+          [
+            0.7634624756335282,
+            0.23223954949101147
+          ],
+          [
+            0.8396076998050683,
+            0.18621399176954734
+          ],
+          [
+            0.8776803118908383,
+            0.14695689841888673
+          ]
+        ]
+      ]
+    },
+    "colors": [],
+    "more": [
+      "刚才描出的檐线，把目光带向木牌楼的屋顶。这座牌楼采用四柱三楼的形式，正面分为三间，灰陶瓦铺成屋面，屋脊点缀蓝色琉璃构件。檐角的起伏之下，是柱、梁与层层木构共同组成的骨架。",
+      "木构件之间的重要连接方式叫“榫卯”：凸出的榫头嵌入相应的卯口，让构件彼此咬合。针对这座牌楼的研究表明，榫卯连接的转动与接触摩擦，是理解其受力和减震特性的重要环节。看似轻巧的一段飞檐，背后有细致的营造技艺。",
+      "今天看到的古建筑，也凝结着后人的修护。20世纪80年代启动的清真大寺维修，强调保留原有面貌，并汇集多地工匠参与。再看一眼檐下的接合处，试着从一根木料，找到它与下一根木料的联系。"
+    ],
+    "sources": [
+      "PRD-v3.0.md · 第 6 节（制作稿，待核实）"
+    ],
+    "nextCourtId": "courtyard-02",
+    "photos": {
+      "detail": {
+        "file": "Xian_Great_Mosque_02_(5459203992).jpg",
+        "width": 5184,
+        "height": 3456
+      },
+      "overview": {
+        "file": "Xian_Great_Mosque_14_(5459230086).jpg",
+        "width": 1920,
+        "height": 1280
+      }
+    },
+    "shots": {
+      "entry": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      },
+      "focus": {
+        "crop": [
+          0.12,
+          0.03,
+          0.76,
+          0.6434843205574913
+        ],
+        "align": "xMidYMid"
+      },
+      "result": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      }
+    },
+    "presentation": {
+      "mode": "sketch-scene",
+      "portraitEntry": false,
+      "portraitResult": false,
+      "resultTransition": "crossfade-to-overview"
+    },
+    "interactionRevision": "aligned-source-pixels-2026-10-02-v2",
+    "artwork": {
+      "file": "微信图片_20261002155041_3118_48.jpg",
+      "width": 1728,
+      "height": 1148,
+      "kind": "user-sketch"
+    },
+    "sourceInteraction": {
+      "paths": [
+        [
+          [
+            353,
+            131
+          ],
+          [
+            389,
+            169
+          ],
+          [
+            467,
+            199
+          ],
+          [
+            626,
+            216
+          ],
+          [
+            842,
+            223
+          ],
+          [
+            1053,
+            220
+          ],
+          [
+            1210,
+            206
+          ],
+          [
+            1310,
+            172
+          ],
+          [
+            1360,
+            143
+          ]
+        ]
+      ]
+    },
+    "sourceHotspot": [
+      855,
+      230
+    ],
+    "observationNote": "看屋檐向两侧轻轻挑起，沿着起伏，续上那一段线。",
+    "journalFact": "榫头嵌入卯口，木构件彼此咬合，托起层叠飞檐。",
+    "moreTitle": "飞檐之下，木构相接",
+    "moreReferences": [
+      {
+        "title": "高大峰等：《西安清真寺木牌楼结构特性与抗震性能分析》（2011）",
+        "url": "https://pubs.cstam.org.cn/data/article/eeed/preview/pdf/dzgcygczd201103016.pdf"
+      },
+      {
+        "title": "人民政协网：《马良骥阿訇与西安清真大寺》（2018）",
+        "url": "https://www.rmzxw.com.cn/c/2018-04-20/2031175.shtml"
+      }
+    ]
+  },
+  {
+    "id": "courtyard-02",
+    "order": 2,
+    "name": "第二进院",
+    "building": "石牌坊",
+    "theme": "一刀一字，刻入匾额",
+    "action": "刻匾字",
+    "prompt": "点击四个字框",
+    "narration": "走近石牌坊以西的南碑亭，在匾额的笔画间观察书写与建筑的细节。",
+    "subtitleTimeline": [
+      {
+        "start": 0,
+        "end": 6,
+        "text": "走近石牌坊以西的南碑亭，在匾额的笔画间观察书写与建筑的细节。"
+      }
+    ],
+    "assets": {
+      "panorama": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "focusReference": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "sketchBase": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "sketchComplete": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "interactionLayer": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "watercolorStart": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "watercolorEnd": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "realityResult": "./assets/courtyard-02/south-pavilion-sketch.png",
+      "video": "./assets/videos/web/courtyard-02-culture.11b2fa41ac69.mp4",
+      "sketchThumbnail": "./assets/courtyard-02/south-pavilion-sketch.png"
+    },
+    "media": {
+      "simulationDuration": 6,
+      "imagesArePlaceholders": false,
+      "videoReady": true,
+      "contentVerified": false,
+      "realityIsVerifiedPhoto": false,
+      "artworkReady": true,
+      "videoOriginal": "石牌坊文化短片.mp4",
+      "useOverlaySubtitles": false,
+      "videoVersion": "11b2fa41ac69"
+    },
+    "photoSource": {
+      "author": "待核实",
+      "url": null,
+      "capturedAt": "未知（未读取或核实拍摄日期）",
+      "license": "待核实",
+      "reviewStatus": "用户提供的实拍照片；对应院落由用户确认，年代、作者及许可待核实",
+      "file": "Great_Mosque_of_Xi'an_20240808_100.jpg"
+    },
+    "transitions": {
+      "focus": 1500,
+      "penFinish": 400,
+      "sketchToInk": 1000,
+      "tailHold": 650,
+      "inkToReality": 1300,
+      "replay": 650,
+      "skip": 650,
+      "blackout": 320,
+      "sceneFade": 900
+    },
+    "hotspot": {
+      "x": 0.49213286713286714,
+      "y": 0.44842657342657344,
+      "label": "南碑亭 · 补匾字"
+    },
+    "focusCrop": {
+      "x": 0.3,
+      "y": 0.3,
+      "width": 0.4,
+      "height": 0.33986013986013985
+    },
+    "safeAreas": {
+      "subtitles": [
+        0.2,
+        0.74,
+        0.6,
+        0.1
+      ],
+      "result": [
+        0.04,
+        0.72,
+        0.92,
+        0.24
+      ]
+    },
+    "interaction": {
+      "type": "carve",
+      "threshold": 1,
+      "radius": 0.025,
+      "glyphs": [
+        "宰",
+        "真",
+        "朝",
+        "虔"
+      ],
+      "paper": "#eeebdf",
+      "regions": [
+        [
+          0.3856262167423751,
+          0.38070516980315805,
+          0.05191434133679429,
+          0.11248107289638759
+        ],
+        [
+          0.440785204412719,
+          0.3835892998774244,
+          0.045425048669695045,
+          0.11248107289638759
+        ],
+        [
+          0.4910772225827385,
+          0.3893575600259571,
+          0.04218040233614534,
+          0.11248107289638754
+        ],
+        [
+          0.5348799480856586,
+          0.3980099502487562,
+          0.04380272550292019,
+          0.10959694282212129
+        ]
+      ]
+    },
+    "colors": [],
+    "more": [
+      "刚才逐字显现的“虔朝真宰”，让我们把目光停在匾额上。在清真大寺，汉字书写也是表达信仰、记录历史的一种方式。第二院石牌坊中央另有“天监在兹”题字；它与本次互动中的四字并非同一处题刻，观看实景时可以留意区分。",
+      "匾额适合凝练地表达寄意，碑记则能保存更长的故事。寺内明嘉靖五年（1526）所立的一通重修碑，记述了此前修寺及寺名变化的经过。今天研究寺院历史，这些文字仍是重要线索；碑中追述的早期年代，也需要与其他史料互相核对。",
+      "从手写笔画到镌刻文字，书法进入建筑，也把人的记忆留在木石之间。再看一眼匾额：字与字如何排列，笔画怎样转折，留白又如何衬出字形？这些细节，让读字也成为观看建筑的一部分。"
+    ],
+    "sources": [
+      "用户2026年10月3日提供的南碑亭速写与位置说明。"
+    ],
+    "nextCourtId": "courtyard-03",
+    "photos": {
+      "detail": {
+        "file": "Great_Mosque_of_Xi'an_20240808_101.jpg",
+        "width": 960,
+        "height": 1280
+      },
+      "overview": {
+        "file": "Great_Mosque_of_Xi'an_20240808_100.jpg",
+        "width": 960,
+        "height": 1280
+      }
+    },
+    "shots": {
+      "entry": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      },
+      "focus": {
+        "crop": [
+          0.3,
+          0.3,
+          0.4,
+          0.33992647058823533
+        ],
+        "align": "xMidYMid"
+      },
+      "result": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      }
+    },
+    "presentation": {
+      "mode": "sketch-scene",
+      "portraitEntry": false,
+      "portraitResult": false,
+      "resultTransition": "crossfade-to-overview",
+      "resultUsesArtwork": true
+    },
+    "interactionRevision": "four-carved-characters-2026-10-03-v1",
+    "artwork": {
+      "file": "牌匾补字-虔朝真宰.png",
+      "width": 1541,
+      "height": 1020,
+      "kind": "user-sketch"
+    },
+    "sourceInteraction": {
+      "regions": [
+        [
+          700,
+          438,
+          32,
+          39
+        ],
+        [
+          734,
+          439,
+          28,
+          39
+        ],
+        [
+          765,
+          441,
+          26,
+          39
+        ],
+        [
+          792,
+          444,
+          27,
+          38
+        ]
+      ]
+    },
+    "sourceHotspot": [
+      760,
+      460
+    ],
+    "observationNote": "抬眼看匾额，四个字藏在一刀一划之间。走近后，用小刻刀依次刻出它们。",
+    "journalFact": "匾额凝练寄意，碑记则为后人留下修寺的历史线索。",
+    "moreTitle": "一字一刻，留下寺院的记忆",
+    "moreReferences": [
+      {
+        "title": "人民政协网：《马良骥阿訇与西安清真大寺》（2018）",
+        "url": "https://www.rmzxw.com.cn/c/2018-04-20/2031175.shtml"
+      },
+      {
+        "title": "丁明俊：《论“清真文化”的起源与演变》（2018）",
+        "url": "https://www.norislam.com/html/Culture/2018-10-04/8864.html"
+      }
+    ]
+  },
+  {
+    "id": "courtyard-03",
+    "order": 3,
+    "name": "第三进院",
+    "building": "省心楼",
+    "theme": "一笔显人，一声入院",
+    "action": "显宣礼人",
+    "prompt": "涂抹虚线内人物",
+    "narration": "省心楼承担宣礼功能，召唤穆斯林礼拜，外形则采用中国式楼阁。",
+    "subtitleTimeline": [
+      {
+        "start": 0,
+        "end": 6,
+        "text": "省心楼承担宣礼功能，召唤穆斯林礼拜，外形则采用中国式楼阁。"
+      }
+    ],
+    "assets": {
+      "panorama": "./assets/courtyard-03/sketch-scene.jpg",
+      "focusReference": "./assets/courtyard-03/sketch-scene.jpg",
+      "sketchBase": "./assets/courtyard-03/sketch-scene.jpg",
+      "sketchComplete": "./assets/courtyard-03/sketch-scene.jpg",
+      "interactionLayer": "./assets/courtyard-03/sketch-scene.jpg",
+      "watercolorStart": "./assets/courtyard-03/sketch-scene.jpg",
+      "watercolorEnd": "./assets/courtyard-03/sketch-scene.jpg",
+      "realityResult": "./assets/courtyard-03/overview-photo.jpg",
+      "video": "./assets/videos/web/courtyard-03-culture.ef54c60cfc26.mp4",
+      "sketchThumbnail": "./assets/courtyard-03/sketch-scene.jpg",
+      "figure": "./assets/courtyard-03/caller-figure-scroll.png"
+    },
+    "media": {
+      "simulationDuration": 6,
+      "imagesArePlaceholders": false,
+      "videoReady": true,
+      "contentVerified": false,
+      "realityIsVerifiedPhoto": true,
+      "artworkReady": true,
+      "videoOriginal": "省心楼文化短片.mp4",
+      "useOverlaySubtitles": false,
+      "videoVersion": "ef54c60cfc26"
+    },
+    "photoSource": {
+      "author": "待核实",
+      "url": null,
+      "capturedAt": "未知（未读取或核实拍摄日期）",
+      "license": "待核实",
+      "reviewStatus": "用户提供的实拍照片；对应院落由用户确认，年代、作者及许可待核实",
+      "file": "Chinese-style_minaret_of_the_Great_Mosque_2023.jpg"
+    },
+    "transitions": {
+      "focus": 1500,
+      "penFinish": 400,
+      "sketchToInk": 1000,
+      "tailHold": 650,
+      "inkToReality": 1300,
+      "replay": 650,
+      "skip": 650,
+      "blackout": 320,
+      "sceneFade": 900
+    },
+    "hotspot": {
+      "x": 0.524671052631579,
+      "y": 0.2982456140350877,
+      "label": "省心楼 · 补楼阁"
+    },
+    "focusCrop": {
+      "x": 0.22,
+      "y": 0.08,
+      "width": 0.62,
+      "height": 0.5286315789473685
+    },
+    "safeAreas": {
+      "subtitles": [
+        0.2,
+        0.74,
+        0.6,
+        0.1
+      ],
+      "result": [
+        0.04,
+        0.72,
+        0.92,
+        0.24
+      ]
+    },
+    "interaction": {
+      "type": "figure",
+      "threshold": 0.85,
+      "radius": 0.016,
+      "sampleStep": 0.008,
+      "figureViewBox": [
+        225,
+        55,
+        750,
+        1250
+      ],
+      "region": [
+        0.5598864994026284,
+        0.7911854506836586,
+        0.041069295101553216,
+        0.1261117748572944
+      ],
+      "polygon": [
+        [
+          0.5598864994026284,
+          0.7911854506836586
+        ],
+        [
+          0.6009557945041816,
+          0.7911854506836586
+        ],
+        [
+          0.6009557945041816,
+          0.8824505509093322
+        ],
+        [
+          0.5598864994026284,
+          0.8824505509093322
+        ]
+      ],
+      "figureSize": [
+        1179,
+        1334
+      ]
+    },
+    "colors": [],
+    "more": [
+      "画中的人物渐渐显现，也提示了省心楼与人的关系：这座楼承担宣礼功能，以呼唤提醒穆斯林前来礼拜。它采用中国式楼阁的形态，层叠的屋檐与八角轮廓，将宗教用途融入院落的建筑空间。",
+      "寺中还有一件与宗教时间相关的文物——用阿拉伯文书写的“月碑”，记录斋月看月的计算方法。省心楼关联礼拜的召唤，月碑保存历法知识；从建筑到文字，可以看到信仰生活如何与时间相连。",
+      "再看一眼楼阁，试着把注意力从屋檐移向栏杆与窗前，想象声音在院落中传开。本次显影人物用于帮助理解宣礼场景，是艺术化示意，并非某位历史人物的肖像。"
+    ],
+    "sources": [
+      "PRD-v3.0.md · 第 6 节（制作稿，待核实）"
+    ],
+    "nextCourtId": "courtyard-04",
+    "photos": {
+      "detail": {
+        "file": "Islam_in_China.jpg",
+        "width": 1300,
+        "height": 844
+      },
+      "overview": {
+        "file": "Chinese-style_minaret_of_the_Great_Mosque_2023.jpg",
+        "width": 960,
+        "height": 1280
+      }
+    },
+    "shots": {
+      "entry": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      },
+      "focus": {
+        "crop": [
+          0.22,
+          0.08,
+          0.62,
+          0.5286315789473685
+        ],
+        "align": "xMidYMid"
+      },
+      "result": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMaxYMid"
+      }
+    },
+    "presentation": {
+      "mode": "sketch-scene",
+      "portraitEntry": false,
+      "portraitResult": true,
+      "resultTransition": "crossfade-to-overview"
+    },
+    "interactionRevision": "caller-window-scroll-2026-10-03-v2",
+    "artwork": {
+      "file": "微信图片_20261002155044_3120_48.jpg",
+      "width": 1728,
+      "height": 1140,
+      "kind": "user-sketch"
+    },
+    "sourceInteraction": {
+      "region": [
+        980,
+        568,
+        44,
+        76
+      ],
+      "polygon": [
+        [
+          980,
+          568
+        ],
+        [
+          1024,
+          568
+        ],
+        [
+          1024,
+          623
+        ],
+        [
+          980,
+          623
+        ]
+      ]
+    },
+    "sourceHotspot": [
+      1002,
+      598
+    ],
+    "observationNote": "楼阁层叠，匾额静立。走近省心楼，用毛笔轻涂匾额右侧，寻见宣礼的人。",
+    "journalFact": "省心楼以中国式楼阁的形态，承担呼唤礼拜的宣礼功能。",
+    "moreTitle": "楼阁之间，响起宣礼的声音",
+    "moreReferences": [
+      {
+        "title": "人民政协网：《马良骥阿訇与西安清真大寺》（2018）",
+        "url": "https://www.rmzxw.com.cn/c/2018-04-20/2031175.shtml"
+      }
+    ]
+  },
+  {
+    "id": "courtyard-04",
+    "order": 4,
+    "name": "第四进院",
+    "building": "礼拜大殿",
+    "theme": "一抹青瓦，沿笔晕染",
+    "action": "染青瓦",
+    "prompt": "涂抹虚线内屋顶",
+    "narration": "这里既保存着建筑艺术，也延续着穆斯林的礼拜与日常生活。",
+    "subtitleTimeline": [
+      {
+        "start": 0,
+        "end": 6,
+        "text": "这里既保存着建筑艺术，也延续着穆斯林的礼拜与日常生活。"
+      }
+    ],
+    "assets": {
+      "panorama": "./assets/courtyard-04/sketch-scene.jpg",
+      "focusReference": "./assets/courtyard-04/sketch-scene.jpg",
+      "sketchBase": "./assets/courtyard-04/sketch-scene.jpg",
+      "sketchComplete": "./assets/courtyard-04/sketch-scene.jpg",
+      "interactionLayer": "./assets/courtyard-04/sketch-scene.jpg",
+      "watercolorStart": "./assets/courtyard-04/sketch-scene.jpg",
+      "watercolorEnd": "./assets/courtyard-04/sketch-scene.jpg",
+      "realityResult": "./assets/courtyard-04/overview-photo.jpg",
+      "video": "./assets/videos/web/courtyard-04-culture.a592f0c4d9a8.mp4",
+      "sketchThumbnail": "./assets/courtyard-04/sketch-scene.jpg"
+    },
+    "media": {
+      "simulationDuration": 6,
+      "imagesArePlaceholders": false,
+      "videoReady": true,
+      "contentVerified": false,
+      "realityIsVerifiedPhoto": true,
+      "artworkReady": true,
+      "videoOriginal": "礼拜大殿文化短篇.mp4",
+      "useOverlaySubtitles": false,
+      "videoVersion": "a592f0c4d9a8"
+    },
+    "photoSource": {
+      "author": "待核实",
+      "url": null,
+      "capturedAt": "未知（未读取或核实拍摄日期）",
+      "license": "待核实",
+      "reviewStatus": "项目内已有的礼拜大殿正面实拍照片；建筑外观已对照，年代、作者及许可待核实",
+      "file": "2023-10-09_西安清真大寺_Great_Mosque_of_Xi'an_26.jpg"
+    },
+    "transitions": {
+      "focus": 1500,
+      "penFinish": 400,
+      "sketchToInk": 1000,
+      "tailHold": 650,
+      "inkToReality": 1300,
+      "replay": 650,
+      "skip": 650,
+      "blackout": 320,
+      "sceneFade": 900
+    },
+    "hotspot": {
+      "x": 0.502458479020979,
+      "y": 0.23339160839160839,
+      "label": "礼拜大殿 · 添色彩"
+    },
+    "focusCrop": {
+      "x": 0.12,
+      "y": 0.05,
+      "width": 0.76,
+      "height": 0.6457342657342657
+    },
+    "safeAreas": {
+      "subtitles": [
+        0.2,
+        0.74,
+        0.6,
+        0.1
+      ],
+      "result": [
+        0.04,
+        0.72,
+        0.92,
+        0.24
+      ]
+    },
+    "interaction": {
+      "type": "roof",
+      "threshold": 0.85,
+      "radius": 0.027,
+      "sampleStep": 0.012,
+      "polygon": [
+        [
+          0.3916666666666667,
+          0.17962962962962967
+        ],
+        [
+          0.6333333333333333,
+          0.17962962962962967
+        ],
+        [
+          0.6447916666666667,
+          0.21018518518518522
+        ],
+        [
+          0.6557291666666668,
+          0.2601851851851852
+        ],
+        [
+          0.6786458333333335,
+          0.32777777777777783
+        ],
+        [
+          0.5026041666666667,
+          0.3481481481481482
+        ],
+        [
+          0.35,
+          0.29537037037037045
+        ],
+        [
+          0.3682291666666667,
+          0.23796296296296296
+        ]
+      ],
+      "guidePaths": [
+        [
+          [
+            0.3916666666666667,
+            0.18703703703703703
+          ],
+          [
+            0.37447916666666675,
+            0.2370370370370371
+          ],
+          [
+            0.35729166666666673,
+            0.2833333333333334
+          ]
+        ],
+        [
+          [
+            0.4619791666666667,
+            0.18611111111111117
+          ],
+          [
+            0.44427083333333334,
+            0.23888888888888893
+          ],
+          [
+            0.42812500000000003,
+            0.2972222222222223
+          ]
+        ],
+        [
+          [
+            0.5208333333333334,
+            0.17962962962962967
+          ],
+          [
+            0.5166666666666667,
+            0.25
+          ],
+          [
+            0.5026041666666667,
+            0.3342592592592593
+          ]
+        ],
+        [
+          [
+            0.571875,
+            0.18796296296296303
+          ],
+          [
+            0.5828125000000001,
+            0.22962962962962963
+          ],
+          [
+            0.5937500000000001,
+            0.28518518518518526
+          ]
+        ],
+        [
+          [
+            0.6322916666666668,
+            0.18703703703703703
+          ],
+          [
+            0.6484375,
+            0.2305555555555556
+          ],
+          [
+            0.6567708333333333,
+            0.2740740740740742
+          ],
+          [
+            0.6708333333333335,
+            0.31388888888888894
+          ]
+        ]
+      ]
+    },
+    "colors": [
+      {
+        "name": "青瓦",
+        "value": "#657c78"
+      }
+    ],
+    "more": [
+      "刚才晕染的屋面，对应着礼拜大殿最醒目的建筑细节之一。《陕西省志·建设志》记载，大殿屋面覆有孔雀蓝琉璃瓦。画中的青色是艺术化表达；回到实景，可以留意琉璃瓦在光线下呈现的色泽。",
+      "大殿平面呈“凸”字形，正面展开七间，前后两座歇山顶相接，构成能够容纳众人礼拜的宽阔空间。沿着长长的屋面观察，便能感受到这座殿堂在院落中的体量。",
+      "色彩也延伸到殿内：天棚彩画将阿拉伯文字与蔓草纹样组合成装饰图案。中国传统殿堂的结构，与伊斯兰文化中的文字和植物纹样，在这里共同构成礼拜空间的面貌。"
+    ],
+    "sources": [
+      "PRD-v3.0.md · 第 6 节（制作稿，待核实）"
+    ],
+    "nextCourtId": null,
+    "photos": {
+      "detail": {
+        "file": "2023-10-09_西安清真大寺_Great_Mosque_of_Xi'an_26.jpg",
+        "width": 1920,
+        "height": 1440
+      },
+      "overview": {
+        "file": "2023-10-09_西安清真大寺_Great_Mosque_of_Xi'an_26.jpg",
+        "width": 1920,
+        "height": 1440
+      }
+    },
+    "shots": {
+      "entry": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      },
+      "focus": {
+        "crop": [
+          0.12,
+          0.05,
+          0.76,
+          0.6457342657342657
+        ],
+        "align": "xMidYMid"
+      },
+      "result": {
+        "crop": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "align": "xMidYMid"
+      }
+    },
+    "presentation": {
+      "mode": "sketch-scene",
+      "portraitEntry": false,
+      "portraitResult": false,
+      "resultTransition": "crossfade-to-overview"
+    },
+    "interactionRevision": "central-roof-wash-2026-10-03-v1",
+    "artwork": {
+      "file": "C:/Users/联想/Documents/xwechat_files/wxid_berqd4zl6hbc22_f085/temp/RWTemp/2026-10/3195a0626e97263be9ec1a012fd371ab/7db9b21d76b38be4b7c4458b19f2382a.jpg",
+      "width": 1728,
+      "height": 1144,
+      "kind": "user-sketch"
+    },
+    "sourceInteraction": {
+      "polygon": [
+        [
+          721.7280000000001,
+          189.89600000000002
+        ],
+        [
+          1039.104,
+          189.89600000000002
+        ],
+        [
+          1054.152,
+          212.46800000000002
+        ],
+        [
+          1068.516,
+          249.404
+        ],
+        [
+          1098.612,
+          299.336
+        ],
+        [
+          867.4200000000001,
+          314.384
+        ],
+        [
+          667.008,
+          275.396
+        ],
+        [
+          690.9480000000001,
+          232.988
+        ]
+      ],
+      "guidePaths": [
+        [
+          [
+            721.7280000000001,
+            195.368
+          ],
+          [
+            699.1560000000001,
+            232.30400000000003
+          ],
+          [
+            676.5840000000001,
+            266.504
+          ]
+        ],
+        [
+          [
+            814.0680000000001,
+            194.68400000000003
+          ],
+          [
+            790.812,
+            233.67200000000003
+          ],
+          [
+            769.6080000000001,
+            276.764
+          ]
+        ],
+        [
+          [
+            891.36,
+            189.89600000000002
+          ],
+          [
+            885.888,
+            241.88
+          ],
+          [
+            867.4200000000001,
+            304.124
+          ]
+        ],
+        [
+          [
+            958.392,
+            196.05200000000002
+          ],
+          [
+            972.7560000000001,
+            226.832
+          ],
+          [
+            987.1200000000001,
+            267.872
+          ]
+        ],
+        [
+          [
+            1037.736,
+            195.368
+          ],
+          [
+            1058.94,
+            227.51600000000002
+          ],
+          [
+            1069.884,
+            259.66400000000004
+          ],
+          [
+            1088.352,
+            289.076
+          ]
+        ]
+      ]
+    },
+    "sourceHotspot": [
+      884.5200000000001,
+      241.88
+    ],
+    "observationNote": "屋脊向两侧舒展，瓦垄顺势垂落。走近后，沿中央五道瓦垄涂抹，让青瓦色随笔迹晕开。",
+    "journalRoofPolygon": [
+      [
+        0,
+        304
+      ],
+      [
+        75,
+        296
+      ],
+      [
+        150,
+        279
+      ],
+      [
+        210,
+        252
+      ],
+      [
+        252,
+        224
+      ],
+      [
+        284,
+        194
+      ],
+      [
+        325,
+        195
+      ],
+      [
+        600,
+        194
+      ],
+      [
+        878,
+        190
+      ],
+      [
+        1160,
+        186
+      ],
+      [
+        1449,
+        175
+      ],
+      [
+        1480,
+        189
+      ],
+      [
+        1512,
+        220
+      ],
+      [
+        1560,
+        250
+      ],
+      [
+        1630,
+        278
+      ],
+      [
+        1690,
+        289
+      ],
+      [
+        1728,
+        291
+      ],
+      [
+        1728,
+        328
+      ],
+      [
+        1470,
+        339
+      ],
+      [
+        1200,
+        347
+      ],
+      [
+        874,
+        351
+      ],
+      [
+        600,
+        350
+      ],
+      [
+        320,
+        340
+      ],
+      [
+        150,
+        337
+      ],
+      [
+        0,
+        344
+      ]
+    ],
+    "journalFact": "大殿屋面覆孔雀蓝琉璃瓦，殿内彩画融入文字与蔓草纹样。",
+    "moreTitle": "一抹瓦色，走近礼拜大殿",
+    "moreReferences": [
+      {
+        "title": "《陕西省志·建设志》：伊斯兰教建筑，第158页",
+        "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923623109161543.pdf"
+      }
+    ]
+  }
+]

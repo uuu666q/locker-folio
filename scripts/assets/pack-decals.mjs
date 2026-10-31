@@ -108,7 +108,7 @@ function reconcileWithScene() {
     console.warn(`  ! 读不到 ${SPECS_FILE}，跳过对账`)
     return
   }
-  const inScene = new Set([...src.matchAll(/url:\s*'(\/assets\/[^']+)'/g)].map((m) => m[1]))
+  const inScene = new Set([...src.matchAll(/url:\s*'(\/?assets\/[^']+)'/g)].map((m) => m[1].replace(/^\//, '')))
   const inAtlas = new Set(MEMBERS.map((m) => m.url))
   const missing = [...inScene].filter((u) => !inAtlas.has(u))
   const extra = [...inAtlas].filter((u) => !inScene.has(u))

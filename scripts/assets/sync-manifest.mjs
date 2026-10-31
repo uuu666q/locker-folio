@@ -36,7 +36,7 @@ const missing = []
 
 /** 形态 A：`{ width: 300, url: '/assets/…', bytes: 9470, version: 'abcd1234' }` */
 text = text.replace(
-  /url: '(\/assets\/[^']+)', bytes: (\d+), version: '([0-9a-f]{8})'/g,
+  /url: '(\/?assets\/[^']+)', bytes: (\d+), version: '([0-9a-f]{8})'/g,
   (whole, url, bytes, version) => {
     const d = onDisk(url)
     if (!d) {
@@ -56,9 +56,9 @@ text = text.replace(
  * 中间可能换行（prettier 对长参数会折行），所以允许空白。
  */
 text = text.replace(
-  /('(?:\/assets\/[^']+)',\s*(?:'[a-z][a-z.]*',\s*)?)(\d+),(\s*)'([0-9a-f]{8})'/g,
+  /('(?:\/?assets\/[^']+)',\s*(?:'[a-z][a-z.]*',\s*)?)(\d+),(\s*)'([0-9a-f]{8})'/g,
   (whole, head, bytes, gap, version) => {
-    const url = head.match(/'(\/assets\/[^']+)'/)[1]
+    const url = head.match(/'(\/?assets\/[^']+)'/)[1]
     const d = onDisk(url)
     if (!d) {
       missing.push(url)

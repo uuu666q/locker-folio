@@ -1,0 +1,273 @@
+@font-face{font-family:HuawaiXingkai;src:url('../assets/fonts/lv-jiande-xingkai.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{--hand:HuawaiXingkai,KaiTi,STKaiti,serif;--ink:#333c32;--pencil:#73634e;--cinnabar:#a6573c;--wash:#3b5342;--tag:#f7f0df}
+body{font-family:var(--hand);font-size:19px}
+#app :is(h1,h2,h3,p,button,small,strong,em,span,aside){font-family:var(--hand);font-weight:400}
+button{font-family:var(--hand);font-synthesis:none}
+button:focus-visible{outline:2px dashed var(--cinnabar);outline-offset:5px}
+.site-header nav{gap:18px;align-items:center}
+.site-header nav button{font-size:21px;letter-spacing:1px;min-height:44px;padding:7px 12px}
+#app[data-notebook=true] .site-header nav{gap:16px}
+.site-header .nav-symbol{display:none}
+.site-header nav .active{color:var(--cinnabar)}
+.site-header nav .active::after{opacity:.9}
+.sketch-action{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;vertical-align:middle}
+.action-label{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;z-index:1;white-space:nowrap}
+.action-label>span:empty{display:none}
+.action-mark{position:relative;z-index:1;width:25px;height:25px;flex-shrink:0;pointer-events:none;transition:transform .2s ease}
+.sketch-action:hover .action-mark{transform:rotate(-7deg)}
+.sketch-action::before,.sketch-action::after{content:'';position:absolute;pointer-events:none;z-index:-1}
+.sketch-action::after{inset:auto 5% 1px;height:9px;background:currentColor;mask:url('../assets/shared/pencil-underline.svg') center/100% 100% no-repeat;opacity:0;transition:opacity .2s}
+.sketch-action:hover::after,.sketch-action:focus-visible::after{opacity:.45}
+/* The filled actions resemble one loaded brushstroke; paper tabs are pencil outlined. */
+button.primary,button.observation-focus{border:0;background:transparent;box-shadow:none;color:#fff8e6;padding:13px 24px;min-height:55px;font-size:23px;letter-spacing:2px;text-shadow:none}
+button.primary::before,button.observation-focus::before{inset:-3px -9px;background:var(--wash);mask:url('../assets/shared/brush-stroke.svg') center/100% 100% no-repeat;transition:background .2s}
+button.primary:hover,button.observation-focus:hover{color:#fff9e8;background:transparent;transform:none}
+button.primary:hover::before,button.observation-focus:hover::before{background:#556246}
+button.primary::after,button.observation-focus::after{display:none}
+button.light,button.text-button{font-size:18px;border:0;box-shadow:none;padding:10px 15px;background:transparent;letter-spacing:1px;min-height:43px;color:inherit}
+button.light::before{inset:3px 0;border:1px solid #73634e88;border-radius:1% 3% 2% 4%/8% 4% 8% 3%;background:#fcf5e6db;transform:rotate(-.55deg);box-shadow:1px 1px 0 #73634e20}
+button.light::after{inset:6px 3px;border:1px solid #73634e30;mask:none;background:none;height:auto;opacity:1;border-radius:3% 1% 4% 1%/6% 4% 8% 3%;transform:rotate(.6deg)}
+button.light:hover,button.text-button:hover{color:var(--cinnabar);background:none}
+.site-header nav button::before{inset:5px 1px;background:#fbf3e355;clip-path:polygon(1% 7%,97% 0,100% 90%,3% 100%);opacity:0;transition:opacity .2s}
+.site-header nav button:hover::before,.site-header nav .active::before{opacity:1}
+.site-footer{font-size:13px;letter-spacing:.5px}
+.site-footer .reset{font-size:14px;gap:3px}.site-footer .reset .action-mark{width:17px;height:17px}
+.notebook-folio{font-size:13px;letter-spacing:2px}
+#app[data-notebook=true] .site-footer,#app[data-notebook=true] .site-footer .reset{font-size:12px}
+/* A quiet centered title composition, above the middle of the moving real scene. */
+.home::after{background:radial-gradient(ellipse at 50% 28%,#101d1766,transparent 66%),linear-gradient(#07140b65,#07140b12 70%,#07140b68)}
+.home-copy{left:50%;top:clamp(115px,18svh,205px);bottom:auto;transform:translateX(-50%);width:min(1060px,94vw);max-width:none;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0;text-shadow:0 2px 15px #101b1280}
+.home-copy .eyebrow{justify-content:center;font-size:18px;color:#fff3dc;letter-spacing:5px}
+.home h1{font-family:var(--hand);font-size:clamp(66px,9.5vw,148px);font-weight:400;letter-spacing:.09em;text-indent:.09em;line-height:1.25;margin:22px 0 8px;white-space:nowrap;color:#fff7e8}
+.home h1>span:first-child{color:inherit}
+.home .intro{font-family:var(--hand);font-size:clamp(23px,2.2vw,32px);letter-spacing:4px;text-indent:4px;color:#fff4de;line-height:1.6}
+.home-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%;margin-top:30px}
+.home-actions button.primary{min-width:218px;min-height:63px;font-size:27px;color:#2f4031;text-shadow:none;padding:12px 27px;gap:11px}
+.home-actions button.primary::before{background:#f1e6ccee}
+.home-actions button.primary:hover::before{background:#fff1d3}
+.home-actions button.primary .action-mark{width:30px;height:30px}
+.home-actions button.text-button{font-size:18px;color:#fff4de;padding:5px 14px;min-height:34px}
+.home-actions button.text-button .action-mark{width:20px;height:20px}
+.home-side{font-size:18px;letter-spacing:6px;bottom:15vh;color:#f9ebcf}
+#app[data-page=home] .site-header{color:#fff1da}
+#app[data-page=home] .site-header nav button::before{background:#f3e7c520}
+#app[data-page=home] .site-header nav button:hover{color:#ffdf9b}
+/* Map annotations and marginal notes use the same pen, at readable sizes. */
+.map-title h1{font-size:clamp(36px,4.1vw,60px);letter-spacing:6px;margin:15px 0}
+.map-title .eyebrow{font-size:16px;letter-spacing:2px}
+.map-title>p:last-child{font-size:20px;letter-spacing:1px;color:#69705d}
+.map-caption strong{font-family:var(--hand);font-size:clamp(26px,3vw,42px);letter-spacing:5px;margin:4px 0}
+.map-caption small,.map-caption em{font-size:16px;letter-spacing:1px}
+.map-caption em{color:#925638}
+.map-caption::before{border-top-style:dashed;opacity:.65}
+.map-dot{position:relative;border:1px solid #865d40;border-radius:43% 57% 48% 52%;font-family:var(--hand);font-size:24px;background:#f9efdbb3;box-shadow:none;transform:rotate(-6deg);width:36px;height:36px;margin:4px}
+.map-dot::after{content:'';position:absolute;inset:-4px;border:1px solid #9c785650;border-radius:55% 45% 53% 47%;transform:rotate(12deg)}
+.map-note{font-size:15px;letter-spacing:1px}
+.directory-compact-index{display:none}
+.scene-heading h1,#app[data-phase=PANORAMA] .scene-heading h1{font-family:var(--hand);font-size:34px;letter-spacing:3px;margin-top:3px}
+.scene-heading p{font-size:15px;letter-spacing:1px}
+.scene-heading .chapter-number{font-size:37px}
+.flow-steps{font-size:15px;gap:13px;opacity:.85}.flow-steps i{font-size:12px}
+.flow-steps .current{position:relative;color:var(--cinnabar)}
+.flow-steps .current::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:8px;background:url('../assets/shared/pencil-underline.svg') center/100% 100% no-repeat}
+.observation-notes{font-family:var(--hand)}
+.note-index,.note-action{font-size:17px;letter-spacing:2px}
+.observation-notes h2{font-size:clamp(30px,2.8vw,42px);line-height:1.45;letter-spacing:2px;margin:14px 0 18px;transform:rotate(-1deg)}
+.observation-note{font-size:22px;line-height:1.85;letter-spacing:.5px;max-width:16em}
+.observation-entry{margin-top:24px}
+.observation-entry .observation-focus{justify-content:center;width:100%;font-size:22px;gap:5px;padding:11px 12px;margin-top:10px;min-height:53px;text-align:center}
+.observation-focus .action-label{font-size:inherit}.observation-focus .action-label>span{display:none}
+.observation-entry small{font-size:16px;line-height:1.5;letter-spacing:0;margin-top:16px}
+.observation-links{gap:5px;margin-top:10px}.observation-links button.text-button{font-size:16px;padding:5px}
+.observation-caption{font-family:var(--hand);font-size:19px;letter-spacing:2px}
+/* Keep controls compact and away from the drawing. Only the paper tabs catch input. */
+.drawing-hint p{font-size:23px;letter-spacing:1px;font-weight:400;line-height:1.5}
+.drawing-hint p::before{content:'落笔处';display:inline-block;color:var(--cinnabar);font-size:16px;border:1px solid #9c614650;padding:0 5px;margin-right:12px;transform:rotate(-3deg)}
+.drawing-toolbar{gap:22px}
+.drawing-toolbar button{font-size:19px;min-height:46px;padding:10px 15px}
+.drawing-toolbar button.primary{padding:9px 20px}
+.coverage{font-size:17px;max-width:220px}
+.drawing-toolbar .coverage small{font-size:14px;line-height:1.35;margin-top:7px}
+.progress-track{height:3px;transform:rotate(-.3deg);border-radius:40% 20% 30% 20%}
+.progress-track i{background:#8b6747;clip-path:polygon(0 20%,97% 0,100% 60%,99% 100%,1% 90%)}
+.palette button{font-size:18px;padding:8px 11px;border:0}
+.palette i{width:18px;height:17px;border-radius:41% 59% 46% 54%;transform:rotate(-12deg);box-shadow:1px 1px 0 #31453b44}
+.palette .selected::before{inset:3px -2px;border:1px solid #8a6c4d80;border-radius:43% 57% 46% 54%;transform:rotate(-5deg);background:#f7eddd9c}
+.scene-bottom button{font-size:16px;min-height:36px;gap:5px;padding:5px 8px}.scene-bottom .action-mark{width:20px;height:20px}
+.completed-actions button{font-size:19px}
+.result-panel h2{font-size:45px;letter-spacing:3px;margin:10px 0}
+.result-panel .eyebrow{font-size:15px}.result-panel p:not(.eyebrow){font-size:20px}
+.result-panel p>span{font-size:16px}
+.result-actions{gap:20px;margin-top:26px;align-items:center}
+.result-actions button{font-size:21px;min-height:50px}
+#app[data-phase=REALITY_RESULT]:has(.has-frame) button.light{color:#384737;text-shadow:none}
+#app[data-phase=REALITY_RESULT]:has(.has-frame) .result-actions button.primary{color:#fff8e6;text-shadow:none}
+.video-controls button{font-size:19px;min-height:40px;padding:6px 10px}
+.video-controls .action-mark{width:20px;height:20px}
+#app[data-phase=VIDEO]:has(.scene-video) .video-controls{top:87px;gap:14px;background:#1e2b21b8;clip-path:polygon(0 4%,99% 0,100% 93%,1% 100%);padding:5px 14px}
+#app[data-phase=VIDEO]:has(.scene-video) .video-controls button.light{color:#fff2d4;text-shadow:none}
+.video-controls button.light::before,.video-controls button.light::after{display:none}
+.video-progress>span{font-size:15px}
+.media-label{font-size:18px}
+#app[data-phase=VIDEO]:has(.scene-video) .media-label{top:156px}
+.background-controls button{font-size:18px}
+.transition-caption,.loading-label{font-size:23px;letter-spacing:2px}
+.transition-caption .tiny-spinner{border-radius:45% 55% 48% 52%}
+/* Sketchbook pages and small paper dialogs. */
+.journal .page-heading h1,#app[data-notebook=true] .journal .page-heading h1{font-size:39px;letter-spacing:3px}
+.journal .page-heading p{font-size:18px;line-height:1.7}
+.journal .page-heading .eyebrow{font-size:15px}
+.sheet-heading{font-size:26px}.sheet-heading small{font-size:18px}.sheet-heading .seal{font-size:20px;color:var(--cinnabar)}
+.journal-item h3{font-size:23px}.journal-item p{font-size:17px;line-height:1.5}
+.journal-item>small{font-size:14px}.journal-order{font-size:23px}
+.sheet-bottom{font-size:20px}.sheet-bottom small{font-size:14px}
+.journal-bottom p{font-size:17px;line-height:1.6}.journal-bottom strong{font-size:21px}
+.journal-bottom{gap:16px;margin-top:22px}.journal-bottom button{font-size:19px}
+.modal-backdrop{background:#242e247a;backdrop-filter:blur(3px)}
+.modal{position:relative;background:#f9f2e0 var(--paper-extension) center/cover;border:1px solid #7e704b88;border-radius:1% 2% 1% 3%;box-shadow:5px 9px 0 #e5dcc7,7px 11px 0 #6c71505e,0 22px 70px #19251840;padding:35px 42px;max-width:720px;max-height:86svh}
+.modal::before{content:'';position:absolute;inset:7px;border:1px solid #81714e35;border-radius:2% 1% 3% 1%;pointer-events:none}
+.modal h2{font-size:34px;line-height:1.4;margin:16px 0}
+.modal>p:not(.eyebrow){font-size:20px;line-height:1.85;color:#59604d}
+.modal .eyebrow{font-size:16px;letter-spacing:4px;color:#9a6846}
+.source-note{font-size:16px;line-height:1.7;padding:12px 0;color:#777359}
+.source-note a{color:#66513c;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.source-note a:hover{color:#8b4a2d}
+.modal-actions{gap:15px}.modal-actions button{font-size:20px}
+.modal-close{font-size:32px;color:#8c5037;z-index:2;transform:rotate(-5deg)}
+.toast{font-family:var(--hand);font-size:20px;background:#3b4b37;clip-path:polygon(0 5%,98% 0,100% 95%,2% 100%)}
+@media(max-height:780px) and (min-width:761px){
+  .home-copy{top:14svh}.home h1{font-size:clamp(70px,9vw,118px);margin:14px 0 5px}.home-actions{margin-top:20px}
+  .site-header nav button{font-size:19px}.site-header{height:76px}
+  .scene-heading{top:90px}.scene-heading h1{font-size:29px}.scene-heading p{font-size:14px}
+  .observation-notes h2{font-size:31px;line-height:1.35;margin:8px 0 10px}.observation-note{font-size:19px;line-height:1.65}
+  .observation-entry{margin-top:15px}.observation-entry small{font-size:14px;margin-top:10px}
+  .observation-entry .observation-focus{font-size:20px;min-height:47px}
+  .drawing-hint p{font-size:21px}.drawing-toolbar button{font-size:17px}.coverage{font-size:16px}
+  .drawing-toolbar .coverage small{font-size:12px}.scene-bottom{bottom:36px}
+  .journal .page-heading h1,#app[data-notebook=true] .journal .page-heading h1{font-size:31px}
+  .sheet-heading{font-size:23px}.journal-item h3{font-size:19px}.journal-item p{font-size:15px}
+  .journal-bottom{margin-top:13px}.journal-bottom p{font-size:15px}.journal-bottom strong{font-size:18px}
+}
+@media(max-width:1050px){
+  .site-header nav{gap:8px}.site-header nav button{font-size:18px;padding:7px 8px}
+  .map-title .eyebrow{font-size:13px}.map-title h1{font-size:37px}.map-title>p:last-child{font-size:16px}
+  .map-caption strong{font-size:30px}.map-caption small,.map-caption em{font-size:13px}
+  .observation-note{font-size:19px}.observation-notes h2{font-size:31px}.note-index,.note-action{font-size:14px}
+  .observation-entry .observation-focus{font-size:19px;padding:9px 5px}.observation-focus .action-mark{width:22px;height:22px}
+  .observation-entry small{font-size:14px}.observation-caption{font-size:17px}
+  .result-actions{gap:12px}.result-actions button{font-size:18px;padding:10px 12px}
+}
+@media(max-width:760px){
+  .site-header{height:68px;padding:8px 4vw}.site-header nav{gap:5px}#app[data-notebook=true] .site-header nav{gap:3px}
+  .site-header nav button,#app[data-notebook=true] .site-header nav button{font-size:16px;letter-spacing:0;padding:6px;gap:4px}
+  .site-header .action-mark{width:21px;height:21px}.site-header .nav-about{display:inline-flex}
+  .home-copy{top:22svh;width:96vw}.home h1{font-size:clamp(48px,11.9vw,84px);letter-spacing:.02em;text-indent:.02em;margin:18px 0 10px}
+  .home-copy .eyebrow{font-size:15px;letter-spacing:3px}.home .intro{font-size:23px;letter-spacing:2px;text-indent:2px}
+  .home-actions{gap:10px;margin-top:28px}.home-actions button.primary{font-size:24px;min-width:196px;min-height:59px}
+  .home-side{font-size:14px;right:6vw;bottom:12vh;letter-spacing:4px}
+  .site-footer{font-size:11px}.site-footer .reset{font-size:12px}#app[data-notebook=true] .site-footer{font-size:10px}
+  .site-footer .action-mark{display:none}.notebook-folio{font-size:10px}
+  #app[data-notebook=true] .map-title{top:10svh;left:14%}.map-title h1{font-size:29px;letter-spacing:3px;writing-mode:horizontal-tb;margin:8px 0}
+  .map-title .eyebrow,.map-title>p:last-child{display:none}
+  #app[data-notebook=true] .map-canvas{width:87.1111svh;height:49svh;top:43%;transform:translate(-50%,-50%)}
+  .map-chapter .map-caption{display:none}
+  .directory-compact-index{position:absolute;left:14%;right:8%;bottom:10%;display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+  .directory-compact-index button{display:flex;align-items:center;gap:9px;min-height:60px;padding:7px 8px;text-align:left;background:#fbf3e2aa;border:1px solid #88765370;border-radius:2% 3% 2% 4%;transform:rotate(-.6deg)}
+  .directory-compact-index button:nth-child(even){transform:rotate(.6deg)}
+  .directory-compact-index button:hover{background:#efe1c5}
+  .directory-compact-index .index-number{font-size:24px;color:#9c593d}
+  .directory-compact-index strong{display:block;font-size:23px;letter-spacing:1px;white-space:nowrap}
+  .directory-compact-index small{display:block;font-size:12px;white-space:nowrap;color:#746c56;margin-top:3px}
+  .map-caption strong{font-size:23px;letter-spacing:1px}.map-caption small,.map-caption em{font-size:11px;letter-spacing:0}
+  .map-dot{width:29px;height:29px;margin:7px;font-size:20px}
+  .scene-heading h1,#app[data-phase=PANORAMA] .scene-heading h1{font-size:27px}.scene-heading p{font-size:12px}
+  .scene-heading .chapter-number{font-size:28px}
+  #app[data-phase=PANORAMA] .scene-images{left:7%;top:27%;width:87%;height:37%}
+  .observation-notes{left:15%;right:10%;top:65%;bottom:12%;justify-content:flex-start;overflow-y:auto;padding:1px 8px 10px}
+  .note-index{font-size:13px}.observation-notes h2{font-size:25px;line-height:1.25;margin:6px 0 9px;letter-spacing:1px}
+  .observation-notes h2 br{display:none}.observation-note{font-size:18px;line-height:1.55;max-width:none}
+  .observation-entry{margin-top:13px}.note-action{display:none}.observation-entry .observation-focus{min-height:47px;font-size:20px;margin-top:0}
+  .observation-entry small{font-size:13px;text-align:center;margin-top:11px}.observation-caption{left:15%;bottom:10%;font-size:13px;letter-spacing:0}
+  #app[data-phase=PANORAMA] .scene-bottom{bottom:6%;right:8%}.observation-links{gap:6px}.observation-links button.text-button{font-size:14px}
+  .drawing-hint,.photo-stage .drawing-hint{left:5%;max-width:90vw;bottom:24vh!important}.drawing-hint p{font-size:18px;letter-spacing:0;white-space:normal}
+  .drawing-hint p::before{font-size:13px;margin-right:5px}
+  .drawing-toolbar{left:5%;right:5%;bottom:11vh;gap:9px;flex-wrap:wrap}.drawing-toolbar button{font-size:16px;min-height:43px;padding:8px 9px}
+  .drawing-toolbar .action-mark{width:20px;height:20px}.coverage{font-size:15px;max-width:140px;min-width:105px}
+  .drawing-toolbar .coverage small{font-size:11px}.palette{margin-left:0}.palette button{font-size:16px}
+  .scene-bottom{left:5%;right:5%;bottom:5vh}.scene-bottom button{font-size:14px;padding:5px}
+  .scene-bottom .action-mark{width:17px;height:17px}
+  .result-panel h2{font-size:33px}.result-panel p:not(.eyebrow){font-size:18px}.result-panel .eyebrow{font-size:13px}
+  .result-actions{flex-wrap:wrap;gap:12px;margin-top:20px}.result-actions button{font-size:17px;min-height:43px;padding:8px 10px}
+  .result-actions .action-mark{width:20px;height:20px}
+  #app[data-phase=VIDEO]:has(.scene-video) .video-controls{top:137px;gap:5px;padding:5px 7px;right:4vw}
+  .video-controls button{font-size:16px;padding:4px 5px;gap:4px}.video-controls .action-mark{width:17px;height:17px}
+  #app[data-phase=VIDEO]:has(.scene-video) .video-progress{width:50px}.video-progress>span{font-size:12px}
+  #app[data-phase=VIDEO]:has(.scene-video) .media-label{top:197px;font-size:16px}
+  #app[data-notebook=true] .journal{padding:94px 35px 100px 47px}
+  .journal .page-heading h1,#app[data-notebook=true] .journal .page-heading h1{font-size:28px;letter-spacing:1px}
+  .journal .page-heading .eyebrow{font-size:12px}.journal .page-heading p{font-size:16px}
+  .sheet-heading{font-size:20px;flex-wrap:wrap;gap:8px}.sheet-heading small{font-size:15px}.sheet-heading .seal{font-size:16px}
+  .journal-item h3{font-size:18px}.journal-item p{font-size:14px}.journal-item>small{font-size:12px}
+  .sheet-bottom{font-size:16px}.sheet-bottom small{font-size:12px}.journal-bottom{gap:12px}.journal-bottom p{font-size:15px}.journal-bottom button{font-size:17px}
+  .modal{padding:26px 25px;max-height:86svh}.modal h2{font-size:27px}.modal>p:not(.eyebrow){font-size:18px}.source-note{font-size:14px}.modal-actions{flex-wrap:wrap}.modal-actions button{font-size:17px}
+}
+@media(max-height:560px) and (min-width:761px){
+  .home-copy{top:15svh}.home-copy .eyebrow{font-size:14px}.home h1{font-size:72px;margin:12px 0 3px}.home .intro{font-size:24px}.home-actions{margin-top:16px}.home-actions button.primary{min-height:49px;font-size:23px}
+}
+@media(prefers-reduced-motion:reduce){.sketch-action .action-mark,.sketch-action::before,.sketch-action::after{transition:none}}
+
+/* Keep functional text together and leave the drawing surface clear. */
+#app .home-copy{top:30svh;bottom:auto}
+#app .home h1{font-family:HuawaiXingkai; font-weight:400;font-style:normal;font-synthesis:none;margin:0 0 16px}
+.site-footer{justify-content:flex-end}
+.storage-warning{position:absolute;left:4vw;bottom:12px;z-index:25;font-size:14px}
+.observation-notes{justify-content:center}
+.observation-note{font-size:24px;line-height:1.6}
+.observation-entry{margin-top:25px}
+.scene-heading h1{margin:0}
+.stage .drawing-toolbar{left:50%;right:auto;bottom:24px;top:auto;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 40px);display:flex;flex-wrap:nowrap;align-items:center;gap:24px;padding:12px 20px;border:1px solid #8d785542;border-radius:2px 4px 3px 2px;background:#faf3e3f2;box-shadow:0 2px 14px #30281612;pointer-events:auto}
+.stage[data-tool=figure] .drawing-toolbar{top:24px;bottom:auto;left:4vw;transform:none}
+.stage .drawing-toolbar button{font-size:18px;letter-spacing:1px;min-height:42px;padding:8px 12px;flex-shrink:0}
+.stage .drawing-toolbar>.light{color:#645c4b}
+.stage .drawing-toolbar>.light::before,.stage .drawing-toolbar>.light::after{display:none}
+.stage .drawing-toolbar>.primary{margin-left:0;padding:8px 16px}
+.stage .drawing-toolbar .action-mark{width:21px;height:21px}
+.drawing-task{min-width:160px}
+.drawing-task p{font-size:21px;line-height:1.4;letter-spacing:0;white-space:nowrap;margin:0}
+.drawing-task .coverage{display:flex;align-items:center;gap:9px;font-size:14px;max-width:none;min-width:0;margin-top:4px}
+.drawing-task .progress-track{width:96px;flex:none;height:2px}
+.drawing-task #coverage{font-size:14px;white-space:nowrap;color:#8a6041;line-height:1}
+.stage .drawing-toolbar .palette{margin-left:0}
+.stage .drawing-toolbar .palette button{font-size:17px;padding:6px;gap:5px;min-height:38px}
+.stage .drawing-toolbar .palette .selected::before{display:none}
+.stage .drawing-toolbar.review-toolbar{gap:28px}
+.review-toolbar p{font-size:20px;margin:0}
+.journal .page-heading{align-items:center}
+.journal .page-heading p{margin:0}
+.journal-bottom p{flex:1}
+@media(max-height:780px) and (min-width:761px){#app .home-copy{top:28svh}}
+@media(max-width:760px){
+  #app .home-copy{top:32svh}
+  #app .home h1{margin-bottom:16px}
+  .observation-notes{justify-content:center}
+  .observation-note{font-size:22px}
+  .stage .drawing-toolbar{bottom:16px;max-width:calc(100vw - 24px);width:calc(100vw - 24px);padding:12px 14px;gap:12px;display:grid;grid-template-columns:auto 1fr auto}
+  .stage[data-tool=figure] .drawing-toolbar{top:82px;bottom:auto;left:50%;transform:translateX(-50%)}
+  .drawing-task{grid-column:1 / -1;grid-row:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .drawing-task p{font-size:19px}
+  .drawing-task .coverage{margin:0;gap:6px}
+  .drawing-task .progress-track{width:42px}
+  .stage .drawing-toolbar>.light{grid-column:1;grid-row:2}
+  .stage .drawing-toolbar>.primary{grid-column:3;grid-row:2}
+  .stage .drawing-toolbar .palette{grid-column:2;grid-row:2;justify-self:center}
+  .stage .drawing-toolbar button{font-size:17px;min-height:38px;padding:6px 9px}
+  .stage .drawing-toolbar .action-mark{width:18px;height:18px}
+  .stage .drawing-toolbar.review-toolbar{display:flex;gap:12px;justify-content:space-between}
+  .review-toolbar p{font-size:17px}
+}
+@media(max-height:560px) and (min-width:761px){
+  #app .home-copy{top:22svh}
+  #app .home h1{margin-bottom:8px}
+  .stage .drawing-toolbar{bottom:12px;padding:8px 16px}
+  .stage[data-tool=figure] .drawing-toolbar{top:12px;bottom:auto}
+}

@@ -1,0 +1,67 @@
+/* A single sheet in a landscape sketchbook, only on the reading/observing pages.
+   This decoration does not change the artwork projection or intercept gestures. */
+:root{--sketch-paper-blend:grayscale(1) brightness(1.10) contrast(1.12)}
+/* A translucent multiply layer lets the supplied leaf pattern sink into existing
+   paper, including the opaque source paper used by the close-up drawing views.
+   It sits below guides, controls, and the binding and never receives input. */
+.paper-gold-grain{position:fixed;inset:0;z-index:1;pointer-events:none;user-select:none;background:url('../assets/shared/gold-ginkgo-paper.jpg') center/cover no-repeat;filter:saturate(.85) contrast(.72) brightness(1.45);opacity:.26;mix-blend-mode:multiply;}
+/* Lift the source paper to white before multiply, retaining pencil marks on one shared paper. */
+#app[data-notebook=true] :is(.observation-image,.map-original,.journal-item>.photo-preview){filter:var(--sketch-paper-blend);mix-blend-mode:multiply}
+#app[data-notebook=true] :is(.map-canvas,.journal-grid){mix-blend-mode:multiply}
+#app[data-notebook=true] :is(.stage,.map-directory,.journal){background-image:linear-gradient(#fff5,#fff5),var(--paper-extension);background-position:center;background-size:cover}
+.notebook-frame{position:absolute;inset:0;z-index:16;pointer-events:none;--book-left:48px;--book-right:24px;--book-top:22px;--book-bottom:30px}
+.notebook-paper-edge{position:absolute;inset:0;background:url('../assets/shared/notebook-deckle.svg') 0 0/100% 100% no-repeat}
+.notebook-binding{position:absolute;left:calc(3.75vw - 27px);top:9vh;bottom:10vh;width:42px;display:flex;flex-direction:column;justify-content:space-between}
+.notebook-binding i{display:block;width:42px;height:27px;flex-shrink:0;background:url('../assets/shared/binding-ring.svg') center/contain no-repeat;transform:rotate(-5deg)}
+.notebook-binding i:nth-child(3n){transform:rotate(-2deg)}
+.notebook-binding i:nth-child(3n + 1){transform:rotate(-7deg)}
+#app[data-notebook=true] .scene-images{mask-image:url('../assets/shared/paper-dry-edge-mask.svg');mask-size:100% 100%;mask-repeat:no-repeat}
+#app[data-notebook=true] .journal-item>.photo-preview{mix-blend-mode:multiply;mask-image:radial-gradient(ellipse at center,#000 54%,transparent 76%)}
+.notebook-folio{position:absolute;bottom:44px;left:48%;font-family:local-serif,serif;font-size:10px;letter-spacing:3px;color:#7a7865}
+#app[data-notebook=true] .site-header{inset:24px 26px auto 67px;height:66px;padding:10px 18px}
+#app[data-notebook=true] .site-footer{left:83px;right:43px;bottom:34px;font-size:8px}
+#app[data-notebook=true] .site-footer .reset{font-size:9px}
+#app[data-notebook=true] .scene-heading{top:115px;left:85px;right:52px}
+#app[data-notebook=true] .scene-bottom{left:85px;right:45px;bottom:70px}
+#app[data-notebook=true] .panorama-caption{left:85px;bottom:18vh}
+#app[data-notebook=true] .completed-actions{right:50px;bottom:18vh}
+#app[data-notebook=true] .map-title{left:86px;top:25vh}
+#app[data-notebook=true] .map-canvas{transform:translate(-50%,-50%) scale(.94)}
+#app[data-notebook=true] .map-note{left:86px;bottom:85px}
+#app[data-notebook=true] .map-chapter[data-id=courtyard-04] .map-caption{margin-top:45px}
+#app[data-notebook=true] .map-chapter[data-id=courtyard-04] .map-caption::before{transform:rotate(6deg);transform-origin:right center}
+#app[data-notebook=true] .journal{padding:125px 65px 100px 95px}
+#app[data-notebook=true] .journal .page-heading h1{font-size:28px}
+#app[data-notebook=true] .journal-sheet{border-top:1px solid #70664b44;border-bottom:1px solid #70664b44;padding:17px 0}
+#app[data-notebook=true] .journal-item>.photo-preview{height:21vh}
+#app[data-notebook=true] .journal-item{padding:0 10px}
+@media(max-width:1050px){
+  #app[data-notebook=true] .site-header{left:70px;padding-left:6px;padding-right:6px}
+  #app[data-notebook=true] .site-header nav{gap:16px}
+  #app[data-notebook=true] .map-title{left:82px}
+  #app[data-notebook=true] .journal{padding:125px 50px 100px 85px}
+  #app[data-notebook=true] .journal .page-heading h1{font-size:24px}
+  .notebook-folio{left:51%;font-size:9px}
+}
+@media(max-height:740px){
+  #app[data-notebook=true] .scene-heading{top:104px}
+  #app[data-notebook=true] .journal{padding-top:112px}
+  #app[data-notebook=true] .journal-sheet{padding:10px 0}
+  #app[data-notebook=true] .journal-item>.photo-preview{height:19vh;margin:8px 0}
+}
+@media(max-width:740px){
+  .notebook-frame{--book-left:28px;--book-right:12px;--book-top:12px;--book-bottom:22px}
+  .notebook-binding{left:calc(3.75vw - 20px);width:32px;top:65px;bottom:65px}
+  .notebook-binding i{width:32px;height:21px}
+  #app[data-notebook=true] .site-header{inset:16px 16px auto 38px;padding:5px;height:60px;gap:5px}
+  #app[data-notebook=true] .wordmark .seal,#app[data-notebook=true] .nav-symbol{display:none}
+  #app[data-notebook=true] .site-header nav{gap:4px}
+  #app[data-notebook=true] .site-header nav button{font-size:10px}
+  #app[data-notebook=true] .site-footer{left:40px;right:20px;bottom:24px}
+  .notebook-folio{display:none}
+  #app[data-notebook=true] .scene-heading{left:46px;top:93px}
+  #app[data-notebook=true] .scene-bottom{right:24px;bottom:57px}
+  #app[data-notebook=true] .panorama-caption{left:45px}
+  #app[data-notebook=true] .map-title{left:44px}
+  #app[data-notebook=true] .journal{padding:105px 26px 100px 45px}
+}

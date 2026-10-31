@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+  <defs><filter id="dry" x="-10%" y="-15%" width="120%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".022 .075" numOctaves="3" seed="24" result="grain"/><feDisplacementMap in="SourceGraphic" in2="grain" scale="35" xChannelSelector="R" yChannelSelector="G"/><feGaussianBlur stdDeviation="12"/></filter></defs>
+  <rect x="120" y="82" width="1710" height="900" rx="22" fill="white" filter="url(#dry)"/>
+</svg>

@@ -1,0 +1,38 @@
+.drawing:not(.craft-interaction){cursor:url('../assets/shared/cursor-sketch-brush.svg') 6 43,crosshair}
+.craft-carve,.craft-carve .carve-hit{cursor:url('../assets/shared/cursor-chisel.svg') 7 43,crosshair}
+.craft-figure{cursor:url('../assets/shared/cursor-ink-brush.svg') 6 44,crosshair}
+.craft-roof{cursor:url('../assets/shared/cursor-paint-brush.svg') 7 42,crosshair}
+.carve-hit{fill:transparent;stroke:#a18b68;stroke-width:1.4;stroke-dasharray:3 6;transition:stroke .3s}
+.carve-hit:hover,.carve-hit:focus{stroke:#704324;stroke-width:2.5;outline:none}
+.is-carved .carve-hit{stroke:transparent}
+.is-carving .carve-scan{animation:carveLetter .7s linear both}
+.stone-dust{fill:none;stroke:#a79b80;stroke-width:2;opacity:0;pointer-events:none}
+.is-carving .stone-dust{animation:stoneDust .7s ease-out both}
+.craft-guides{stroke:#798678;stroke-width:2;stroke-dasharray:5 10;opacity:.7;pointer-events:none}
+.craft-roof{mix-blend-mode:multiply}
+.craft-guide-overlay{pointer-events:none}
+.drawing-toolbar{pointer-events:none}
+.drawing-toolbar button,.drawing-toolbar .palette,.drawing-toolbar .coverage{pointer-events:auto}
+.wet-ink{animation:inkBloom .32s ease-out both}
+.craft-complete{pointer-events:none}
+.home-art{background:#151a16}
+.site-header nav{margin-left:auto}
+/* Keep the targets readable over dense ink, with a slow pulse rather than a rapid flash. */
+.stage[data-state=DRAWING] .drawing :is(.draw-guides,.craft-guides,.carve-hit){
+  stroke:#ca6133;stroke-width:2.6;stroke-dasharray:8 6;stroke-linecap:round;
+  opacity:1;filter:drop-shadow(0 0 2px #fff6d3);
+  animation:guidePulse 1.7s ease-in-out infinite,guideDashes 2.6s linear infinite;
+}
+.stage[data-state=DRAWING] .craft-guide-roof .craft-guides{stroke:#218d83;stroke-width:3.2}
+.stage[data-state=DRAWING] .craft-figure .craft-guides{fill:none}
+.drawing :is(.draw-guides,.craft-guides)>*,.carve-hit{vector-effect:non-scaling-stroke}
+.stage[data-state=DRAWING] .is-carved .carve-hit{stroke:transparent;filter:none;animation:none}
+.stage[data-state=DRAWING] .carve-hit:is(:hover,:focus-visible){stroke:#b5481e;stroke-width:3.2}
+.caller-figure{filter:grayscale(.82) blur(.48px);opacity:.94}
+@keyframes guidePulse{0%,100%{opacity:.62}50%{opacity:1}}
+@keyframes guideDashes{from{stroke-dashoffset:0}to{stroke-dashoffset:-28}}
+@keyframes carveLetter{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes stoneDust{0%{opacity:0;transform:translateY(0)}25%{opacity:.7}100%{opacity:0;transform:translateY(16px)}}
+@keyframes inkBloom{from{opacity:.25}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.is-carving .carve-scan,.is-carving .stone-dust,.wet-ink,.craft-complete{animation-duration:.08s}}
+@media(prefers-reduced-motion:reduce){.stage[data-state=DRAWING] .drawing :is(.draw-guides,.craft-guides,.carve-hit){animation:none;opacity:1}}
